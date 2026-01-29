@@ -192,7 +192,7 @@
         <section class="relative min-h-[80vh] flex items-center overflow-hidden">
             <!-- 背景画像 -->
             <div class="absolute inset-0 z-0">
-                <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=2070&auto-format&fit=crop" alt="" class="w-full h-full object-cover opacity-90">
+                <img src="https://images.unsplash.com/photo-1519824145371-296894a0daa9?q=80&w=2070&auto-format&fit=crop" alt="" class="w-full h-full object-cover opacity-90">
                 <div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent"></div>
             </div>
 
@@ -227,18 +227,7 @@
                     <!-- ソーシャルプルーフ -->
                     <div class="mt-8 bg-white/80 backdrop-blur-sm p-4 rounded-2xl inline-block">
                         <div class="flex flex-wrap items-center gap-6 text-sm">
-                            <div class="flex items-center gap-2">
-                                <div class="flex -space-x-2">
-                                    <div class="w-8 h-8 rounded-full bg-gray-300 border-2 border-white"></div>
-                                    <div class="w-8 h-8 rounded-full bg-gray-400 border-2 border-white"></div>
-                                    <div class="w-8 h-8 rounded-full bg-gray-500 border-2 border-white"></div>
-                                </div>
-                                <div>
-                                    <p class="font-bold text-gray-800">累計施術数</p>
-                                    <p class="text-xl font-bold text-brand-main">1,200<span class="text-xs text-gray-600">件+</span></p>
-                                </div>
-                            </div>
-                            <div class="border-l border-gray-300 pl-6">
+                            <div>
                                 <p class="font-bold text-gray-800">お客様満足度</p>
                                 <div class="flex items-center gap-1">
                                     <span class="text-xl font-bold text-brand-main">4.9</span>
@@ -263,9 +252,9 @@
                         <span class="bg-white text-brand-main text-xs font-bold px-3 py-1 rounded-full animate-pulse">🎁 初回限定</span>
                         <span class="text-xs font-medium">本日まで残り5枠</span>
                     </div>
-                    <h2 class="text-2xl md:text-3xl font-bold mb-3">初回体験60分コースが<span class="text-4xl md:text-5xl mx-2">50% OFF</span></h2>
+                    <h2 class="text-2xl md:text-3xl font-bold mb-3">初回体験60分コース</h2>
                     <p class="text-xl md:text-2xl font-bold mb-4">
-                        通常 <span class="line-through opacity-70">¥12,000</span> → <span class="text-3xl md:text-4xl">¥6,000</span>
+                        <span class="text-3xl md:text-4xl">¥5,000</span>
                         <span class="text-sm font-normal ml-2">(税込)</span>
                     </p>
                     <div class="flex flex-col sm:flex-row gap-3 justify-center items-center mt-6">
@@ -480,55 +469,68 @@
                 <h2 class="text-center text-3xl font-bold mb-4">Menu & Price</h2>
                 <p class="text-center text-gray-500 mb-16">お客様に選ばれる、明確で通いやすい料金体系</p>
 
-                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                    <!-- 単発プラン -->
-                    <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 flex flex-col justify-center">
-                        <h3 class="text-xl font-bold text-gray-700 text-center mb-6">都度払いメニュー</h3>
-                        <div class="space-y-4">
-                            <div class="flex justify-between items-center border-b border-gray-200 pb-4">
-                                <div>
-                                    <p class="font-bold text-lg">クイックケア</p>
-                                    <p class="text-sm text-gray-500">30分</p>
-                                </div>
-                                <p class="text-2xl font-bold text-gray-800">¥6,500<span class="text-sm font-normal text-gray-500">（税込）</span></p>
-                            </div>
-                            <div class="flex justify-between items-center border-b border-gray-200 pb-4">
-                                <div>
-                                    <p class="font-bold text-lg">スタンダードケア</p>
-                                    <p class="text-sm text-gray-500">60分</p>
-                                </div>
-                                <p class="text-2xl font-bold text-gray-800">¥12,000<span class="text-sm font-normal text-gray-500">（税込）</span></p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="max-w-5xl mx-auto overflow-x-auto">
+                    <table class="w-full border-collapse bg-white shadow-xl rounded-2xl overflow-hidden">
+                        <thead>
+                            <tr class="bg-brand-main text-white">
+                                <th class="py-4 px-6 text-left font-bold">メニュー</th>
+                                <th class="py-4 px-6 text-center font-bold">30分コース</th>
+                                <th class="py-4 px-6 text-center font-bold">60分コース</th>
+                                <th class="py-4 px-6 text-left font-bold">特典・お得度</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-5 px-6 font-bold text-gray-800">単発（通常）</td>
+                                <td class="py-5 px-6 text-center">
+                                    <p class="text-2xl font-bold text-gray-800">¥6,000</p>
+                                </td>
+                                <td class="py-5 px-6 text-center">
+                                    <p class="text-2xl font-bold text-gray-800">¥12,000</p>
+                                </td>
+                                <td class="py-5 px-6 text-gray-600">まずはお試しに</td>
+                            </tr>
+                            <tr class="border-b border-gray-200 bg-brand-bg/30">
+                                <td class="py-5 px-6 font-bold text-gray-800">3回チケット</td>
+                                <td class="py-5 px-6 text-center">
+                                    <p class="text-2xl font-bold text-brand-main">¥16,500</p>
+                                    <p class="text-xs text-gray-500 mt-1">(1回 ¥5,500)</p>
+                                </td>
+                                <td class="py-5 px-6 text-center">
+                                    <p class="text-2xl font-bold text-brand-main">¥33,000</p>
+                                    <p class="text-xs text-gray-500 mt-1">(1回 ¥11,000)</p>
+                                </td>
+                                <td class="py-5 px-6">
+                                    <p class="font-bold text-red-500">最大3,000円お得！</p>
+                                    <p class="text-sm text-gray-600 mt-1">（定期的なメンテナンスに）</p>
+                                </td>
+                            </tr>
+                            <tr class="bg-yellow-50 border-2 border-yellow-400">
+                                <td class="py-5 px-6 font-bold text-gray-800">6回チケット</td>
+                                <td class="py-5 px-6 text-center">
+                                    <p class="text-2xl font-bold text-brand-main">¥30,000</p>
+                                    <p class="text-xs text-gray-500 mt-1">(1回 ¥5,000)</p>
+                                </td>
+                                <td class="py-5 px-6 text-center">
+                                    <p class="text-2xl font-bold text-brand-main">¥60,000</p>
+                                    <p class="text-xs text-gray-500 mt-1">(1回 ¥10,000)</p>
+                                </td>
+                                <td class="py-5 px-6">
+                                    <p class="font-bold text-red-500">最大12,000円お得！</p>
+                                    <p class="text-yellow-600 font-bold mt-1">★一番人気・最安値★</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-                    <!-- 会員プラン（強調） -->
-                    <div class="bg-white p-8 rounded-2xl border-2 border-brand-main shadow-xl relative overflow-hidden transform md:-translate-y-4">
-                        <div class="absolute top-0 right-0 bg-brand-main text-white text-xs font-bold px-3 py-1 rounded-bl-lg">RECOMMENDED</div>
-                        <h3 class="text-xl font-bold text-brand-main text-center mb-2">お得な会員プラン</h3>
-                        <p class="text-center text-sm text-gray-500 mb-6">定期的なケアで根本改善を目指す方へ</p>
-                        
-                        <div class="space-y-6">
-                            <div class="bg-brand-bg/50 p-4 rounded-lg">
-                                <div class="flex justify-between items-end mb-1">
-                                    <p class="font-bold text-lg text-gray-800">30分 × 3回チケット</p>
-                                    <p class="text-2xl font-bold text-brand-main">¥15,000</p>
-                                </div>
-                                <p class="text-right text-xs text-gray-500">（1回あたり ¥5,000 / <span class="text-red-500 font-bold">¥1,500お得</span>）</p>
-                            </div>
-
-                            <div class="bg-brand-bg/50 p-4 rounded-lg">
-                                <div class="flex justify-between items-end mb-1">
-                                    <p class="font-bold text-lg text-gray-800">60分 × 3回チケット</p>
-                                    <p class="text-2xl font-bold text-brand-main">¥31,500</p>
-                                </div>
-                                <p class="text-right text-xs text-gray-500">（1回あたり ¥10,500 / <span class="text-red-500 font-bold">¥1,500お得</span>）</p>
-                            </div>
-                        </div>
-                        <div class="mt-6 text-center">
-                            <p class="text-xs text-gray-500">※有効期限：購入から3ヶ月</p>
-                        </div>
-                    </div>
+                <div class="mt-8 max-w-5xl mx-auto bg-gray-50 p-6 rounded-xl">
+                    <h3 class="font-bold text-gray-800 mb-3">補足事項</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li>• 有効期限：ご購入から6ヶ月</li>
+                        <li>• チケットの返金は致しかねます</li>
+                        <li class="font-bold text-gray-800">※価格はすべて税込み表示です</li>
+                    </ul>
                 </div>
 
                 <div class="mt-12 text-center">
