@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>頭痛・自律神経専門サロン YURUMU | 新宿・池袋・上野</title>
+    <meta name="description" content="新宿・池袋・上野の頭痛・自律神経専門サロンYURUMU。初回50%OFF。PLT×NAORUの技術提携による根本改善。お客様満足度4.9。WEB予約24時間受付中。">
+    <meta name="keywords" content="頭痛,自律神経,整体,新宿,池袋,上野,YURUMU">
+
+    <!-- OGP設定（SNSシェア用） -->
+    <meta property="og:title" content="頭痛・自律神経専門サロン YURUMU | 新宿・池袋・上野">
+    <meta property="og:description" content="初回50%OFF！新宿・池袋・上野で頭痛・自律神経の根本改善。WEB予約24時間受付中。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yurumu.com">
+    <meta property="og:image" content="https://yurumu.com/ogp-image.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="YURUMU | 頭痛・自律神経専門サロン">
+    <meta name="twitter:description" content="初回50%OFF！新宿・池袋・上野で根本改善。">
+
+    <!-- モバイル最適化 -->
+    <meta name="theme-color" content="#8D9B6A">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="YURUMU">
+
+    <!-- favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E🌿%3C/text%3E%3C/svg%3E">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            main: '#8D9B6A', // 資料から抽出したアクセントカラー
+                            light: '#A7BCA0',
+                            bg: '#F7F5F2',   // 資料から抽出した背景色
+                            dark: '#3C3C3C',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: #3C3C3C;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .font-display { font-family: 'Playfair Display', serif; }
+
+        /* モバイル最適化 */
+        @media (max-width: 768px) {
+            body {
+                padding-bottom: 80px; /* 固定CTAボタンの高さ分 */
+            }
+
+            /* タッチターゲットの最適化 */
+            button, a, input[type="radio"], input[type="checkbox"] {
+                min-height: 44px; /* iOSガイドライン準拠 */
+                min-width: 44px;
+            }
+
+            /* スムーズスクロール */
+            html {
+                scroll-behavior: smooth;
+                scroll-padding-top: 80px;
+            }
+
+            /* テキストサイズの自動調整を防止 */
+            input, textarea, select {
+                font-size: 16px; /* iOS Safariのズーム防止 */
+            }
+        }
+
+        /* FAQのアコーディオン用 */
+        details > summary {
+            list-style: none;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] summary ~ * { animation: sweep .3s ease-in-out; }
+        @keyframes sweep { 0% {opacity: 0; transform: translateY(-10px)} 100% {opacity: 1; transform: translateY(0)} }
+
+        /* アクティブ状態のフィードバック */
+        a:active, button:active {
+            opacity: 0.7;
+        }
+
+        /* スムーズなホバー/タップ効果 */
+        .hover-lift {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        /* レスポンシブ画像 */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* セーフエリア対応 */
+        .safe-area-inset-bottom {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+
+        /* スクロールスナップ（店舗情報などのスワイプ用） */
+        .snap-x {
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+        .snap-center {
+            scroll-snap-align: center;
+        }
+
+        /* ローディング時のちらつき防止 */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-brand-bg">
+
+    <!-- ヘッダー -->
+    <header class="bg-white/90 backdrop-blur-md sticky top-0 z-50 shadow-sm border-b border-gray-100">
+        <div class="container mx-auto px-4 md:px-6 h-16 md:h-20 flex justify-between items-center">
+            <!-- ロゴエリア -->
+            <a href="#" class="flex items-center gap-2 group">
+                <svg class="w-8 h-8 text-brand-main group-hover:opacity-80 transition" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8"><path d="M50 8.3C64.6 8.3 75 18.7 75 33.3C75 44.4 68.7 50 62.5 54.1C56.2 58.3 50 62.5 50 91.6M50 33.3C50 20.8 41.6 12.5 33.3 12.5C25 12.5 16.6 20.8 16.6 33.3C16.6 45.8 25 54.1 33.3 54.1C41.6 54.1 50 45.8 50 33.3Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <div class="flex flex-col">
+                    <span class="text-xl md:text-2xl font-bold tracking-tight text-gray-800 leading-none">YURUMU</span>
+                    <span class="text-[10px] text-gray-500 font-medium">頭痛・自律神経専門サロン</span>
+                </div>
+            </a>
+            
+            <!-- ナビゲーション（PC） -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-bold text-gray-600">
+                <a href="#about" class="hover:text-brand-main transition">特徴</a>
+                <a href="#flow" class="hover:text-brand-main transition">施術の流れ</a>
+                <a href="#menu" class="hover:text-brand-main transition">料金</a>
+                <a href="#voice" class="hover:text-brand-main transition">口コミ</a>
+                <a href="#access" class="hover:text-brand-main transition">店舗</a>
+            </nav>
+
+            <!-- ハンバーガーメニュー（モバイル） -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-600 hover:text-brand-main" aria-label="メニュー">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+
+            <!-- 予約ボタン -->
+            <a href="#reserve" class="hidden md:block bg-brand-main hover:bg-brand-light text-white font-bold py-3 px-6 rounded-full transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-sm md:text-base">
+                予約する
+            </a>
+        </div>
+
+        <!-- モバイルメニュー -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg">
+            <nav class="container mx-auto px-4 py-4 flex flex-col gap-3">
+                <a href="#about" class="py-3 px-4 text-gray-700 font-bold hover:bg-brand-bg rounded-lg transition">特徴</a>
+                <a href="#flow" class="py-3 px-4 text-gray-700 font-bold hover:bg-brand-bg rounded-lg transition">施術の流れ</a>
+                <a href="#menu" class="py-3 px-4 text-gray-700 font-bold hover:bg-brand-bg rounded-lg transition">料金</a>
+                <a href="#voice" class="py-3 px-4 text-gray-700 font-bold hover:bg-brand-bg rounded-lg transition">口コミ</a>
+                <a href="#access" class="py-3 px-4 text-gray-700 font-bold hover:bg-brand-bg rounded-lg transition">店舗</a>
+                <a href="#reserve" class="bg-brand-main text-white font-bold py-3 px-4 rounded-lg text-center transition">予約する</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ヒーローセクション -->
+        <section class="relative min-h-[80vh] flex items-center overflow-hidden">
+            <!-- 背景画像 -->
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=2070&auto-format&fit=crop" alt="" class="w-full h-full object-cover opacity-90">
+                <div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent"></div>
+            </div>
+
+            <div class="container mx-auto px-6 relative z-10 py-20">
+                <div class="max-w-2xl">
+                    <div class="flex flex-wrap gap-2 mb-6">
+                         <span class="inline-block bg-brand-main text-white text-sm font-bold px-3 py-1 rounded-full">
+                            NEW OPEN
+                        </span>
+                        <span class="inline-block bg-brand-dark/10 text-brand-dark font-bold px-3 py-1 rounded-full text-sm">
+                            PLT × NAORU 技術提携
+                        </span>
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-black leading-tight tracking-tight text-gray-800 mb-6">
+                        本気で<br>
+                        頭痛や自律神経で<br>
+                        <span class="text-brand-main">悩む人をゼロにする</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-600 mb-10 leading-relaxed font-medium">
+                        その場しのぎのマッサージではありません。<br>
+                        最強治療家・只野氏が完全監修した技術で、<br>
+                        あなたの不調の原因へアプローチします。
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#reserve" class="bg-brand-main hover:bg-brand-light text-white text-center font-bold py-4 px-8 rounded-full shadow-lg transition text-lg transform hover:-translate-y-1">
+                            初回体験を予約する
+                        </a>
+                        <a href="#about" class="bg-white hover:bg-gray-50 text-gray-700 text-center font-bold py-4 px-8 rounded-full shadow border border-gray-200 transition">
+                            詳しく見る
+                        </a>
+                    </div>
+                    <!-- ソーシャルプルーフ -->
+                    <div class="mt-8 bg-white/80 backdrop-blur-sm p-4 rounded-2xl inline-block">
+                        <div class="flex flex-wrap items-center gap-6 text-sm">
+                            <div class="flex items-center gap-2">
+                                <div class="flex -space-x-2">
+                                    <div class="w-8 h-8 rounded-full bg-gray-300 border-2 border-white"></div>
+                                    <div class="w-8 h-8 rounded-full bg-gray-400 border-2 border-white"></div>
+                                    <div class="w-8 h-8 rounded-full bg-gray-500 border-2 border-white"></div>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-gray-800">累計施術数</p>
+                                    <p class="text-xl font-bold text-brand-main">1,200<span class="text-xs text-gray-600">件+</span></p>
+                                </div>
+                            </div>
+                            <div class="border-l border-gray-300 pl-6">
+                                <p class="font-bold text-gray-800">お客様満足度</p>
+                                <div class="flex items-center gap-1">
+                                    <span class="text-xl font-bold text-brand-main">4.9</span>
+                                    <span class="text-yellow-400 text-lg">★★★★★</span>
+                                </div>
+                            </div>
+                            <div class="border-l border-gray-300 pl-6">
+                                <p class="font-bold text-gray-800">リピート率</p>
+                                <p class="text-xl font-bold text-brand-main">92<span class="text-sm text-gray-600">%</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 初回限定キャンペーンバナー -->
+        <section class="py-8 bg-gradient-to-r from-brand-main to-brand-light">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto text-center text-white">
+                    <div class="flex items-center justify-center gap-2 mb-3">
+                        <span class="bg-white text-brand-main text-xs font-bold px-3 py-1 rounded-full animate-pulse">🎁 初回限定</span>
+                        <span class="text-xs font-medium">本日まで残り5枠</span>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-bold mb-3">初回体験60分コースが<span class="text-4xl md:text-5xl mx-2">50% OFF</span></h2>
+                    <p class="text-xl md:text-2xl font-bold mb-4">
+                        通常 <span class="line-through opacity-70">¥12,000</span> → <span class="text-3xl md:text-4xl">¥6,000</span>
+                        <span class="text-sm font-normal ml-2">(税込)</span>
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-3 justify-center items-center mt-6">
+                        <a href="#reserve" class="bg-white text-brand-main font-bold py-4 px-10 rounded-full shadow-xl transition transform hover:scale-105 text-lg">
+                            今すぐ予約する
+                        </a>
+                        <p class="text-xs">※初回のみ・各店舗先着10名様限定</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 悩み共感セクション -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl font-bold mb-4">こんなお悩みはありませんか？</h2>
+                    <p class="text-gray-500">薬に頼る生活や、なんとなく続く不調を終わらせましょう</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <!-- 悩み1 -->
+                    <div class="bg-gray-50 p-8 rounded-2xl text-center border border-gray-100 transition hover:shadow-md">
+                        <div class="w-16 h-16 bg-brand-bg rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">⚡️</div>
+                        <h3 class="font-bold text-lg mb-2">慢性的な頭痛</h3>
+                        <p class="text-sm text-gray-600">天候によって頭が痛くなる、薬が手放せない、デスクワークがつらい。</p>
+                    </div>
+                    <!-- 悩み2 -->
+                    <div class="bg-gray-50 p-8 rounded-2xl text-center border border-gray-100 transition hover:shadow-md">
+                        <div class="w-16 h-16 bg-brand-bg rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">🌙</div>
+                        <h3 class="font-bold text-lg mb-2">眠れない・疲れが取れない</h3>
+                        <p class="text-sm text-gray-600">夜中に目が覚める、朝起きてもダルい、自律神経の乱れを感じる。</p>
+                    </div>
+                    <!-- 悩み3 -->
+                    <div class="bg-gray-50 p-8 rounded-2xl text-center border border-gray-100 transition hover:shadow-md">
+                        <div class="w-16 h-16 bg-brand-bg rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">💆‍♀️</div>
+                        <h3 class="font-bold text-lg mb-2">マッサージに行っても戻る</h3>
+                        <p class="text-sm text-gray-600">その時は気持ちいいけれど、翌日には元通りになってしまう。</p>
+                    </div>
+                </div>
+                
+                <!-- 共感からのCTA -->
+                <div class="mt-12 text-center">
+                    <p class="text-brand-main font-bold mb-4">そのお悩み、YURUMUにお任せください。</p>
+                     <svg class="w-6 h-6 text-brand-main mx-auto animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- 特徴セクション -->
+        <section id="about" class="py-20 bg-brand-bg relative overflow-hidden">
+            <!-- 装飾 -->
+            <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-brand-main/5 rounded-full blur-3xl"></div>
+
+            <div class="container mx-auto px-6 relative z-10">
+                <h2 class="text-center text-3xl md:text-4xl font-bold mb-4">YURUMUが選ばれる3つの理由</h2>
+                <p class="text-center text-gray-500 mb-16 max-w-2xl mx-auto">「ただ治す」だけではありません。心身ともに満たされる新しい体験を提供します。</p>
+
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+                    <div class="order-2 md:order-1">
+                        <span class="text-brand-main font-display text-6xl font-bold opacity-20 -mb-8 block">01</span>
+                        <h3 class="text-2xl font-bold mb-4 mt-2">最強治療家・只野氏による<br>完全監修の技術</h3>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            PLT協会代表の只野氏と、NAORU代表の若林氏。業界を牽引する二人のコラボレーションにより生まれた独自のメソッドです。<br>
+                            「流れ作業」のような施術は一切行いません。お客様一人ひとりの身体の状態に向き合い、根本的な改善を目指します。
+                        </p>
+                    </div>
+                    <div class="order-1 md:order-2 rounded-2xl overflow-hidden shadow-xl bg-white h-64 md:h-auto relative group">
+                        <img src="images/technical-supervision.jpg"
+                             onerror="this.src='https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=2070&auto=format&fit=crop'"
+                             alt="技術監修 - 専門的な施術風景"
+                             class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+                     <div class="rounded-2xl overflow-hidden shadow-xl bg-white h-64 md:h-auto relative group">
+                        <img src="images/private-space.jpg"
+                             onerror="this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=2070&auto=format&fit=crop'"
+                             alt="プライベート空間 - リラックスできるサロン内装"
+                             class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                    </div>
+                    <div>
+                        <span class="text-brand-main font-display text-6xl font-bold opacity-20 -mb-8 block">02</span>
+                        <h3 class="text-2xl font-bold mb-4 mt-2">心まで「ゆるむ」<br>プライベート空間</h3>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            YURUMUは、セラピスト自身のパフォーマンスも大切にしています。
+                            余裕を持った予約枠と、心身ともに充実したセラピストが担当することで、あなたに最高のホスピタリティを提供します。<br>
+                            忙しい日常を忘れ、自分自身を大切にする時間をお過ごしください。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 md:order-1">
+                        <span class="text-brand-main font-display text-6xl font-bold opacity-20 -mb-8 block">03</span>
+                        <h3 class="text-2xl font-bold mb-4 mt-2">「不調に悩まない」を<br>当たり前にする継続サポート</h3>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            私たちのゴールは、あなたがサロンに通い続けることではありません。<br>
+                            不調が気にならなくなり、やりたいことに全力で取り組める毎日を取り戻すこと。<br>
+                            そのための通いやすいプランと計画的なケアを提案します。
+                        </p>
+                    </div>
+                    <div class="order-1 md:order-2 rounded-2xl overflow-hidden shadow-xl bg-white h-64 md:h-auto relative group">
+                        <img src="images/counseling.jpg"
+                             onerror="this.src='https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop'"
+                             alt="カウンセリング - お客様との丁寧なヒアリング"
+                             class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- [NEW] 監修者・スタッフ紹介セクション -->
+        <section id="staff" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-center text-3xl font-bold mb-4">Supervisors</h2>
+                <p class="text-center text-gray-500 mb-16">業界をリードするプロフェッショナルが技術を監修</p>
+                
+                <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+                    <!-- 監修者1 -->
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-32 h-32 md:w-40 md:h-40 rounded-full bg-gray-200 mb-6 border-4 border-brand-bg overflow-hidden">
+                             <img src="https://placehold.co/200x200/8D9B6A/FFFFFF?text=Tadano" alt="" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold">只野 拓也 <span class="text-sm font-normal text-gray-500 ml-2">PLT協会 代表</span></h3>
+                        <p class="text-brand-main font-bold mt-2 mb-4">技術監修</p>
+                        <p class="text-sm text-gray-600 leading-relaxed max-w-sm">
+                            治療家として数多くの難治性症状を改善に導いてきた技術を、YURUMUのために体系化。根本原因への的確なアプローチを実現します。
+                        </p>
+                    </div>
+                    <!-- 監修者2 -->
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-32 h-32 md:w-40 md:h-40 rounded-full bg-gray-200 mb-6 border-4 border-brand-bg overflow-hidden">
+                            <img src="https://placehold.co/200x200/A7BCA0/FFFFFF?text=Wakabayashi" alt="" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold">若林 大樹 <span class="text-sm font-normal text-gray-500 ml-2">株式会社NAORUテクノロジー 代表</span></h3>
+                        <p class="text-brand-main font-bold mt-2 mb-4">運営・サービス監修</p>
+                        <p class="text-sm text-gray-600 leading-relaxed max-w-sm">
+                            全国に展開するNAORU整体のノウハウを注入。お客様が安心して通える、持続可能な健康づくりのためのサービス設計を行っています。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- [NEW] 施術の流れセクション -->
+        <section id="flow" class="py-20 bg-brand-bg">
+            <div class="container mx-auto px-6">
+                <h2 class="text-center text-3xl font-bold mb-4">Flow</h2>
+                <p class="text-center text-gray-500 mb-16">ご予約から施術までの流れ</p>
+
+                <div class="max-w-4xl mx-auto space-y-8">
+                    <!-- Step 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm flex flex-col md:flex-row gap-6 items-start relative">
+                        <div class="absolute -left-3 top-6 w-8 h-8 bg-brand-main text-white rounded-full flex items-center justify-center font-bold shadow-md hidden md:flex">1</div>
+                        <div class="w-full md:w-1/3 aspect-video bg-gray-100 rounded-lg overflow-hidden">
+                             <img src="https://placehold.co/300x200/eee/bbb?text=Reservation" alt="" class="w-full h-full object-cover">
+                        </div>
+                        <div class="w-full md:w-2/3">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2"><span class="text-brand-main md:hidden">Step 01. </span>ご予約</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                LINEまたはWeb予約フォームより、ご希望の日時を選択してご予約ください。当日のご予約も空き状況により可能です。
+                            </p>
+                        </div>
+                    </div>
+                     <!-- Step 2 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm flex flex-col md:flex-row gap-6 items-start relative">
+                        <div class="absolute -left-3 top-6 w-8 h-8 bg-brand-main text-white rounded-full flex items-center justify-center font-bold shadow-md hidden md:flex">2</div>
+                        <div class="w-full md:w-1/3 aspect-video bg-gray-100 rounded-lg overflow-hidden">
+                             <img src="https://placehold.co/300x200/eee/bbb?text=Counseling" alt="" class="w-full h-full object-cover">
+                        </div>
+                        <div class="w-full md:w-2/3">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2"><span class="text-brand-main md:hidden">Step 02. </span>カウンセリング・検査</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                初回は特に時間をかけてお話を伺います。現在の不調、生活習慣、過去の既往歴などを詳しくヒアリングし、根本原因を探ります。
+                            </p>
+                        </div>
+                    </div>
+                     <!-- Step 3 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm flex flex-col md:flex-row gap-6 items-start relative">
+                        <div class="absolute -left-3 top-6 w-8 h-8 bg-brand-main text-white rounded-full flex items-center justify-center font-bold shadow-md hidden md:flex">3</div>
+                        <div class="w-full md:w-1/3 aspect-video bg-gray-100 rounded-lg overflow-hidden">
+                             <img src="https://placehold.co/300x200/eee/bbb?text=Treatment" alt="" class="w-full h-full object-cover">
+                        </div>
+                        <div class="w-full md:w-2/3">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2"><span class="text-brand-main md:hidden">Step 03. </span>施術</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                バキバキしないソフトな調整で、頭痛や自律神経の乱れにアプローチします。リラックスできる空間で、心身ともに緩む時間をお過ごしください。
+                            </p>
+                        </div>
+                    </div>
+                     <!-- Step 4 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm flex flex-col md:flex-row gap-6 items-start relative">
+                        <div class="absolute -left-3 top-6 w-8 h-8 bg-brand-main text-white rounded-full flex items-center justify-center font-bold shadow-md hidden md:flex">4</div>
+                        <div class="w-full md:w-1/3 aspect-video bg-gray-100 rounded-lg overflow-hidden">
+                             <img src="https://placehold.co/300x200/eee/bbb?text=After+Care" alt="" class="w-full h-full object-cover">
+                        </div>
+                        <div class="w-full md:w-2/3">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2"><span class="text-brand-main md:hidden">Step 04. </span>説明・今後の計画</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                お身体の状態を解説し、改善までの最適なペースをご提案します。無理な勧誘は一切ございませんのでご安心ください。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- メニュー・料金セクション -->
+        <section id="menu" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-center text-3xl font-bold mb-4">Menu & Price</h2>
+                <p class="text-center text-gray-500 mb-16">お客様に選ばれる、明確で通いやすい料金体系</p>
+
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- 単発プラン -->
+                    <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 flex flex-col justify-center">
+                        <h3 class="text-xl font-bold text-gray-700 text-center mb-6">都度払いメニュー</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center border-b border-gray-200 pb-4">
+                                <div>
+                                    <p class="font-bold text-lg">クイックケア</p>
+                                    <p class="text-sm text-gray-500">30分</p>
+                                </div>
+                                <p class="text-2xl font-bold text-gray-800">¥6,500<span class="text-sm font-normal text-gray-500">（税込）</span></p>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-gray-200 pb-4">
+                                <div>
+                                    <p class="font-bold text-lg">スタンダードケア</p>
+                                    <p class="text-sm text-gray-500">60分</p>
+                                </div>
+                                <p class="text-2xl font-bold text-gray-800">¥12,000<span class="text-sm font-normal text-gray-500">（税込）</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 会員プラン（強調） -->
+                    <div class="bg-white p-8 rounded-2xl border-2 border-brand-main shadow-xl relative overflow-hidden transform md:-translate-y-4">
+                        <div class="absolute top-0 right-0 bg-brand-main text-white text-xs font-bold px-3 py-1 rounded-bl-lg">RECOMMENDED</div>
+                        <h3 class="text-xl font-bold text-brand-main text-center mb-2">お得な会員プラン</h3>
+                        <p class="text-center text-sm text-gray-500 mb-6">定期的なケアで根本改善を目指す方へ</p>
+                        
+                        <div class="space-y-6">
+                            <div class="bg-brand-bg/50 p-4 rounded-lg">
+                                <div class="flex justify-between items-end mb-1">
+                                    <p class="font-bold text-lg text-gray-800">30分 × 3回チケット</p>
+                                    <p class="text-2xl font-bold text-brand-main">¥15,000</p>
+                                </div>
+                                <p class="text-right text-xs text-gray-500">（1回あたり ¥5,000 / <span class="text-red-500 font-bold">¥1,500お得</span>）</p>
+                            </div>
+
+                            <div class="bg-brand-bg/50 p-4 rounded-lg">
+                                <div class="flex justify-between items-end mb-1">
+                                    <p class="font-bold text-lg text-gray-800">60分 × 3回チケット</p>
+                                    <p class="text-2xl font-bold text-brand-main">¥31,500</p>
+                                </div>
+                                <p class="text-right text-xs text-gray-500">（1回あたり ¥10,500 / <span class="text-red-500 font-bold">¥1,500お得</span>）</p>
+                            </div>
+                        </div>
+                        <div class="mt-6 text-center">
+                            <p class="text-xs text-gray-500">※有効期限：購入から3ヶ月</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 text-center">
+                    <p class="text-sm text-gray-500 mb-6">※ 初回はカウンセリングを含め、プラス15分程度お時間をいただきます。</p>
+                    <a href="#reserve" class="inline-block bg-brand-main hover:bg-brand-light text-white font-bold py-4 px-12 rounded-full shadow-lg transition transform hover:-translate-y-1 text-lg">
+                        まずはWEB予約する
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- [NEW] お客様の声セクション -->
+        <section id="voice" class="py-20 bg-brand-bg">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">Voice</h2>
+                    <p class="text-gray-500 mb-6">施術体験者・モニター様の声</p>
+
+                    <!-- ソーシャルシェアボタン -->
+                    <div class="flex justify-center items-center gap-3 flex-wrap">
+                        <p class="text-sm text-gray-600 font-bold">シェアする:</p>
+                        <a href="https://twitter.com/intent/tweet?text=頭痛・自律神経専門サロンYURUMU｜初回50%OFF&url=https://yurumu.com" target="_blank" rel="noopener" class="bg-[#1DA1F2] hover:bg-[#1a8cd8] text-white px-4 py-2 rounded-lg text-sm font-bold transition flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                            X
+                        </a>
+                        <a href="https://social-plugins.line.me/lineit/share?url=https://yurumu.com" target="_blank" rel="noopener" class="bg-[#06C755] hover:bg-[#05b54d] text-white px-4 py-2 rounded-lg text-sm font-bold transition flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+                            LINE
+                        </a>
+                        <button onclick="shareFacebook()" class="bg-[#1877F2] hover:bg-[#166fe5] text-white px-4 py-2 rounded-lg text-sm font-bold transition flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                            Facebook
+                        </button>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                    <!-- 声1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <div class="flex items-center mb-4">
+                            <div class="text-yellow-400 text-sm">★★★★★</div>
+                            <span class="text-xs text-gray-400 ml-2">30代 女性 / デスクワーク</span>
+                        </div>
+                        <h3 class="font-bold text-gray-800 mb-3">頭痛薬を飲む回数が激減しました</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            長年偏頭痛に悩んでいましたが、ここで施術を受けてから「あ、痛くなりそう」という予兆が減りました。施術も全く痛くなく、いつも寝てしまうほどリラックスできます。
+                        </p>
+                    </div>
+                     <!-- 声2 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <div class="flex items-center mb-4">
+                            <div class="text-yellow-400 text-sm">★★★★★</div>
+                            <span class="text-xs text-gray-400 ml-2">40代 女性 / 主婦</span>
+                        </div>
+                        <h3 class="font-bold text-gray-800 mb-3">朝の目覚めが全然違います</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            自律神経の乱れからか、常にだるさがありましたが、通い始めてから朝スッキリ起きられるようになりました。先生も親身に話を聞いてくれるので安心です。
+                        </p>
+                    </div>
+                     <!-- 声3 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <div class="flex items-center mb-4">
+                            <div class="text-yellow-400 text-sm">★★★★★</div>
+                            <span class="text-xs text-gray-400 ml-2">50代 男性 / 会社員</span>
+                        </div>
+                        <h3 class="font-bold text-gray-800 mb-3">短時間でも効果を実感</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            仕事の合間に30分コースを利用しています。短い時間でも首や肩が軽くなり、午後の仕事のパフォーマンスが上がります。会員プランがお得で助かっています。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- [NEW] 予約フォーム -->
+        <section id="reserve" class="py-20 bg-gradient-to-br from-brand-bg to-white">
+            <div class="container mx-auto px-6">
+                <div class="max-w-2xl mx-auto">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl font-bold mb-4">WEB予約</h2>
+                        <p class="text-gray-500">フォームからのご予約は24時間受付中</p>
+                        <div class="mt-4 inline-flex items-center gap-2 bg-red-50 text-red-600 px-4 py-2 rounded-full text-sm font-bold">
+                            <span class="animate-pulse">🔥</span>
+                            本日の残り枠: <span class="text-xl">5組</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 md:p-10 rounded-2xl shadow-xl">
+                        <form class="space-y-6">
+                            <!-- 店舗選択 -->
+                            <div>
+                                <label class="block text-gray-700 font-bold mb-3">ご希望の店舗 <span class="text-red-500">*</span></label>
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                                    <label class="flex items-center justify-center p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-brand-main hover:bg-brand-bg transition">
+                                        <input type="radio" name="store" value="shinjuku" class="mr-2" required>
+                                        <span class="font-bold">新宿店</span>
+                                    </label>
+                                    <label class="flex items-center justify-center p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-brand-main hover:bg-brand-bg transition">
+                                        <input type="radio" name="store" value="ikebukuro" class="mr-2" required>
+                                        <span class="font-bold">池袋店</span>
+                                    </label>
+                                    <label class="flex items-center justify-center p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-brand-main hover:bg-brand-bg transition">
+                                        <input type="radio" name="store" value="ueno" class="mr-2" required>
+                                        <span class="font-bold">上野店</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- コース選択 -->
+                            <div>
+                                <label class="block text-gray-700 font-bold mb-3">コース <span class="text-red-500">*</span></label>
+                                <select name="course" required class="w-full p-4 border-2 border-gray-200 rounded-xl focus:border-brand-main focus:outline-none text-gray-700 font-medium">
+                                    <option value="">選択してください</option>
+                                    <option value="first-60">【初回限定】60分コース ¥6,000（50%OFF）</option>
+                                    <option value="quick-30">クイックケア 30分 ¥6,500</option>
+                                    <option value="standard-60">スタンダードケア 60分 ¥12,000</option>
+                                    <option value="ticket-30-3">30分×3回チケット ¥15,000</option>
+                                    <option value="ticket-60-3">60分×3回チケット ¥31,500</option>
+                                </select>
+                            </div>
+
+                            <!-- 日時選択 -->
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-gray-700 font-bold mb-3">第1希望日 <span class="text-red-500">*</span></label>
+                                    <input type="date" name="date1" required class="w-full p-4 border-2 border-gray-200 rounded-xl focus:border-brand-main focus:outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-bold mb-3">第1希望時間 <span class="text-red-500">*</span></label>
+                                    <select name="time1" required class="w-full p-4 border-2 border-gray-200 rounded-xl focus:border-brand-main focus:outline-none">
+                                        <option value="">選択してください</option>
+                                        <option value="10:00">10:00</option>
+                                        <option value="11:00">11:00</option>
+                                        <option value="12:00">12:00</option>
+                                        <option value="13:00">13:00</option>
+                                        <option value="14:00">14:00</option>
+                                        <option value="15:00">15:00</option>
+                                        <option value="16:00">16:00</option>
+                                        <option value="17:00">17:00</option>
+                                        <option value="18:00">18:00</option>
+                                        <option value="19:00">19:00</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-gray-700 font-bold mb-3">第2希望日</label>
+                                    <input type="date" name="date2" class="w-full p-4 border-2 border-gray-200 rounded-xl focus:border-brand-main focus:outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-bold mb-3">第2希望時間</label>
+                                    <select name="time2" class="w-full p-4 border-2 border-gray-200 rounded-xl focus:border-brand-main focus:outline-none">
+                                        <option value="">選択してください</option>
+                                        <option value="10:00">10:00</option>
+                                        <option value="11:00">11:00</option>
+                                        <option value="12:00">12:00</option>
+                                        <option value="13:00">13:00</option>
+                                        <option value="14:00">14:00</option>
+                                        <option value="15:00">15:00</option>
+                                        <option value="16:00">16:00</option>
+                                        <option value="17:00">17:00</option>
+                                        <option value="18:00">18:00</option>
+                                        <option value="19:00">19:00</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- お客様情報 -->
+                            <div>
+                                <label class="block text-gray-700 font-bold mb-3">お名前 <span class="text-red-500">*</span></label>
+                                <input type="text" name="name" required placeholder="山田 太郎" class="w-full p-4 border-2 border-gray-200 rounded-xl focus:border-brand-main focus:outline-none">
+                            </div>
+
+                            <div>
+                                <label class="block text-gray-700 font-bold mb-3">電話番号 <span class="text-red-500">*</span></label>
+                                <input type="tel" name="phone" required placeholder="090-1234-5678" class="w-full p-4 border-2 border-gray-200 rounded-xl focus:border-brand-main focus:outline-none">
+                            </div>
+
+                            <div>
+                                <label class="block text-gray-700 font-bold mb-3">メールアドレス <span class="text-red-500">*</span></label>
+                                <input type="email" name="email" required placeholder="example@email.com" class="w-full p-4 border-2 border-gray-200 rounded-xl focus:border-brand-main focus:outline-none">
+                            </div>
+
+                            <div>
+                                <label class="block text-gray-700 font-bold mb-3">ご相談内容・症状</label>
+                                <textarea name="message" rows="4" placeholder="頭痛、肩こり、自律神経の乱れなど、気になる症状をお聞かせください" class="w-full p-4 border-2 border-gray-200 rounded-xl focus:border-brand-main focus:outline-none resize-none"></textarea>
+                            </div>
+
+                            <!-- 送信ボタン -->
+                            <button type="submit" class="w-full bg-brand-main hover:bg-brand-light text-white font-bold py-5 px-8 rounded-full shadow-lg transition transform hover:-translate-y-1 text-lg">
+                                この内容で予約を申し込む
+                            </button>
+
+                            <p class="text-xs text-center text-gray-500">
+                                ※送信後、24時間以内に確認のご連絡をさせていただきます<br>
+                                ※お急ぎの場合はお電話でのご予約をおすすめします
+                            </p>
+                        </form>
+
+                        <!-- 電話・LINE予約 -->
+                        <div class="mt-10 pt-8 border-t border-gray-200">
+                            <p class="text-center text-gray-600 font-bold mb-4">その他の予約方法</p>
+                            <div class="flex flex-col sm:flex-row gap-3">
+                                <a href="tel:0312345678" class="flex-1 bg-white border-2 border-brand-main text-brand-main text-center font-bold py-4 px-6 rounded-full transition hover:bg-brand-main hover:text-white flex items-center justify-center gap-2">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                                    電話で予約
+                                </a>
+                                <a href="https://line.me/R/ti/p/@yurumu" target="_blank" rel="noopener" class="flex-1 bg-[#06C755] hover:bg-[#05b54d] text-white text-center font-bold py-4 px-6 rounded-full shadow transition flex items-center justify-center gap-2">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.244-.73.244-1.088 0-.058 0-.144-.03-.215-.1-.172-2.434-1.39-2.678-1.39zm-2.908 7.593c-1.747 0-3.48-.53-4.942-1.49L7.793 24.41l1.132-3.337a8.955 8.955 0 0 1-1.72-5.272c0-4.955 4.04-8.995 8.997-8.995S25.2 10.845 25.2 15.8c0 4.958-4.04 8.998-8.998 8.998zm0-19.798c-5.96 0-10.8 4.842-10.8 10.8 0 1.964.53 3.898 1.546 5.574L5 27.176l5.974-1.92a10.807 10.807 0 0 0 16.03-9.455c0-5.958-4.842-10.8-10.802-10.8z"/></svg>
+                                    LINEで予約
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- [NEW] FAQセクション -->
+        <section id="faq" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-center text-3xl font-bold mb-4">Q&A</h2>
+                <p class="text-center text-gray-500 mb-12">よくあるご質問</p>
+                
+                <div class="max-w-3xl mx-auto space-y-4">
+                    <details class="bg-gray-50 rounded-lg group">
+                        <summary class="flex justify-between items-center p-6 cursor-pointer font-bold text-gray-700">
+                            着替えはありますか？
+                            <span class="text-brand-main transition-transform group-open:rotate-180">▼</span>
+                        </summary>
+                        <div class="px-6 pb-6 text-gray-600 text-sm">
+                            はい、清潔なお着替え（上下）を無料でご用意しております。お仕事帰りやお出かけ前でも手ぶらでご来店ください。
+                        </div>
+                    </details>
+                    <details class="bg-gray-50 rounded-lg group">
+                        <summary class="flex justify-between items-center p-6 cursor-pointer font-bold text-gray-700">
+                            施術は痛いですか？
+                            <span class="text-brand-main transition-transform group-open:rotate-180">▼</span>
+                        </summary>
+                        <div class="px-6 pb-6 text-gray-600 text-sm">
+                            いいえ、ボキボキ鳴らすような強い刺激の施術は行いません。筋肉の緊張をやさしく解きほぐすソフトな施術ですので、痛みが苦手な方でも安心して受けていただけます。
+                        </div>
+                    </details>
+                    <details class="bg-gray-50 rounded-lg group">
+                        <summary class="flex justify-between items-center p-6 cursor-pointer font-bold text-gray-700">
+                            クレジットカードは使えますか？
+                            <span class="text-brand-main transition-transform group-open:rotate-180">▼</span>
+                        </summary>
+                        <div class="px-6 pb-6 text-gray-600 text-sm">
+                            はい、VISA、Mastercard、JCB、American Expressなど各種クレジットカードがご利用いただけます。また、PayPayなどのQR決済にも対応予定です。
+                        </div>
+                    </details>
+                    <details class="bg-gray-50 rounded-lg group">
+                        <summary class="flex justify-between items-center p-6 cursor-pointer font-bold text-gray-700">
+                            予約なしでも行けますか？
+                            <span class="text-brand-main transition-transform group-open:rotate-180">▼</span>
+                        </summary>
+                        <div class="px-6 pb-6 text-gray-600 text-sm">
+                            当サロンは完全予約制とさせていただいておりますが、当日に空きがある場合はご案内可能です。ご来店の前にLINEまたはお電話にて空き状況をご確認ください。
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- メッセージ（Visionの再構成） -->
+        <section class="py-20 bg-gray-800 text-white relative">
+             <!-- 背景画像 -->
+            <div class="absolute inset-0 opacity-30">
+                 <img src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?q=80&w=1887&auto-format&fit=crop" alt="[Image of Brand Image]" class="w-full h-full object-cover">
+            </div>
+            <div class="container mx-auto px-6 relative z-10 text-center">
+                <h2 class="text-2xl md:text-3xl font-serif italic mb-8">Our Vision</h2>
+                <h3 class="text-3xl md:text-4xl font-bold mb-8 leading-normal">
+                    新しい健康の<br>「当たり前」を創る
+                </h3>
+                <p class="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                    「不調があればケアする」から「不調に悩まないのが当たり前」へ。<br><br>
+                    YURUMUは、日本中の街角で<br>
+                    あなたが健やかな毎日を送るための<br>
+                    「社会インフラ」となることを目指しています。
+                </p>
+            </div>
+        </section>
+
+        <!-- 店舗情報・アクセス -->
+        <section id="access" class="py-20 bg-brand-bg">
+            <div class="container mx-auto px-6">
+                <h2 class="text-center text-3xl font-bold mb-4">店舗一覧</h2>
+                <p class="text-center text-gray-500 mb-12">都内3店舗でお待ちしております</p>
+
+                <!-- 店舗タブ切り替え（モバイル最適化） -->
+                <div class="flex justify-center mb-8 gap-2 flex-wrap">
+                    <button onclick="showStore('shinjuku')" class="store-tab px-6 py-3 rounded-full font-bold transition bg-brand-main text-white" data-store="shinjuku">
+                        新宿店
+                    </button>
+                    <button onclick="showStore('ikebukuro')" class="store-tab px-6 py-3 rounded-full font-bold transition bg-gray-200 text-gray-600 hover:bg-gray-300" data-store="ikebukuro">
+                        池袋店
+                    </button>
+                    <button onclick="showStore('ueno')" class="store-tab px-6 py-3 rounded-full font-bold transition bg-gray-200 text-gray-600 hover:bg-gray-300" data-store="ueno">
+                        上野店
+                    </button>
+                </div>
+
+                <!-- 新宿店 -->
+                <div id="store-shinjuku" class="store-info">
+                    <div class="bg-white p-6 md:p-12 rounded-2xl shadow-lg max-w-5xl mx-auto">
+                        <div class="flex flex-col lg:flex-row gap-8">
+                            <div class="w-full lg:w-1/2 h-[300px] lg:h-[400px] bg-gray-200 rounded-xl relative overflow-hidden">
+                                <iframe class="w-full h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.827940452!2d139.69871!3d35.689487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188cd0d6b1ba1f%3A0x1c32a1f665fa1e3!2z5paw5a6_6aeF!5e0!3m2!1sja!2sjp!4v1700000000000!5m2!1sja!2sjp" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                            <div class="w-full lg:w-1/2 flex flex-col justify-center">
+                                <h3 class="text-2xl font-bold mb-6 flex items-center gap-2">
+                                    <span class="text-brand-main">📍</span> YURUMU 新宿店
+                                </h3>
+                                <dl class="space-y-4 text-gray-600 mb-6">
+                                    <div class="flex border-b border-gray-100 pb-3">
+                                        <dt class="w-24 font-bold text-sm">住所</dt>
+                                        <dd class="text-sm">東京都新宿区新宿3-○○-○○ ○○ビル5F</dd>
+                                    </div>
+                                    <div class="flex border-b border-gray-100 pb-3">
+                                        <dt class="w-24 font-bold text-sm">アクセス</dt>
+                                        <dd class="text-sm">新宿駅東口より徒歩3分</dd>
+                                    </div>
+                                    <div class="flex border-b border-gray-100 pb-3">
+                                        <dt class="w-24 font-bold text-sm">電話</dt>
+                                        <dd class="text-sm">
+                                            <a href="tel:0312345678" class="text-brand-main font-bold hover:underline flex items-center gap-1">
+                                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                                                03-1234-5678
+                                            </a>
+                                        </dd>
+                                    </div>
+                                    <div class="flex border-b border-gray-100 pb-3">
+                                        <dt class="w-24 font-bold text-sm">営業時間</dt>
+                                        <dd class="text-sm">10:00 - 21:00（最終受付 20:00）</dd>
+                                    </div>
+                                    <div class="flex border-b border-gray-100 pb-3">
+                                        <dt class="w-24 font-bold text-sm">定休日</dt>
+                                        <dd class="text-sm">不定休</dd>
+                                    </div>
+                                </dl>
+                                <div class="flex flex-col sm:flex-row gap-3">
+                                    <a href="tel:0312345678" class="flex-1 bg-white border-2 border-brand-main text-brand-main text-center font-bold py-3 px-4 rounded-full transition hover:bg-brand-main hover:text-white flex items-center justify-center gap-2">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                                        電話予約
+                                    </a>
+                                    <a href="#reserve" class="flex-1 bg-[#06C755] hover:bg-[#05b54d] text-white text-center font-bold py-3 px-4 rounded-full shadow transition flex items-center justify-center gap-2">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.244-.73.244-1.088 0-.058 0-.144-.03-.215-.1-.172-2.434-1.39-2.678-1.39zm-2.908 7.593c-1.747 0-3.48-.53-4.942-1.49L7.793 24.41l1.132-3.337a8.955 8.955 0 0 1-1.72-5.272c0-4.955 4.04-8.995 8.997-8.995S25.2 10.845 25.2 15.8c0 4.958-4.04 8.998-8.998 8.998zm0-19.798c-5.96 0-10.8 4.842-10.8 10.8 0 1.964.53 3.898 1.546 5.574L5 27.176l5.974-1.92a10.807 10.807 0 0 0 16.03-9.455c0-5.958-4.842-10.8-10.802-10.8z"/></svg>
+                                        LINE予約
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 池袋店 -->
+                <div id="store-ikebukuro" class="store-info hidden">
+                    <div class="bg-white p-6 md:p-12 rounded-2xl shadow-lg max-w-5xl mx-auto">
+                        <div class="flex flex-col lg:flex-row gap-8">
+                            <div class="w-full lg:w-1/2 h-[300px] lg:h-[400px] bg-gray-200 rounded-xl relative overflow-hidden">
+                                <iframe class="w-full h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.923!2d139.71038!3d35.728926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d6fcd0!2z5rGg6KKL6aeF!5e0!3m2!1sja!2sjp!4v1700000000000!5m2!1sja!2sjp" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                            <div class="w-full lg:w-1/2 flex flex-col justify-center">
+                                <h3 class="text-2xl font-bold mb-6 flex items-center gap-2">
+                                    <span class="text-brand-main">📍</span> YURUMU 池袋店
+                                </h3>
+                                <dl class="space-y-4 text-gray-600 mb-6">
+                                    <div class="flex border-b border-gray-100 pb-3">
+                                        <dt class="w-24 font-bold text-sm">住所</dt>
+                                        <dd class="text-sm">東京都豊島区池袋2-○○-○○ ○○ビル4F</dd>
+                                    </div>
+                                    <div class="flex border-b border-gray-100 pb-3">
+                                        <dt class="w-24 font-bold text-sm">アクセス</dt>
+                                        <dd class="text-sm">池袋駅西口より徒歩5分</dd>
+                                    </div>
+                                    <div class="flex border-b border-gray-100 pb-3">
+                                        <dt class="w-24 font-bold text-sm">電話</dt>
+                                        <dd class="text-sm">
+                                            <a href="tel:0398765432" class="text-brand-main font-bold hover:underline flex items-center gap-1">
+                                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                                                03-9876-5432
+                                            </a>
+                                        </dd>
+                                    </div>
+                                    <div class="flex border-b border-gray-100 pb-3">
+                                        <dt class="w-24 font-bold text-sm">営業時間</dt>
+                                        <dd class="text-sm">10:00 - 21:00（最終受付 20:00）</dd>
+                                    </div>
+                                    <div class="flex border-b border-gray-100 pb-3">
+                                        <dt class="w-24 font-bold text-sm">定休日</dt>
+                                        <dd class="text-sm">不定休</dd>
+                                    </div>
+                                </dl>
+                                <div class="flex flex-col sm:flex-row gap-3">
+                                    <a href="tel:0398765432" class="flex-1 bg-white border-2 border-brand-main text-brand-main text-center font-bold py-3 px-4 rounded-full transition hover:bg-brand-main hover:text-white flex items-center justify-center gap-2">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                                        電話予約
+                                    </a>
+                                    <a href="#reserve" class="flex-1 bg-[#06C755] hover:bg-[#05b54d] text-white text-center font-bold py-3 px-4 rounded-full shadow transition flex items-center justify-center gap-2">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.244-.73.244-1.088 0-.058 0-.144-.03-.215-.1-.172-2.434-1.39-2.678-1.39zm-2.908 7.593c-1.747 0-3.48-.53-4.942-1.49L7.793 24.41l1.132-3.337a8.955 8.955 0 0 1-1.72-5.272c0-4.955 4.04-8.995 8.997-8.995S25.2 10.845 25.2 15.8c0 4.958-4.04 8.998-8.998 8.998zm0-19.798c-5.96 0-10.8 4.842-10.8 10.8 0 1.964.53 3.898 1.546 5.574L5 27.176l5.974-1.92a10.807 10.807 0 0 0 16.03-9.455c0-5.958-4.842-10.8-10.802-10.8z"/></svg>
+                                        LINE予約
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 上野店 -->
+                <div id="store-ueno" class="store-info hidden">
+                    <div class="bg-white p-6 md:p-12 rounded-2xl shadow-lg max-w-5xl mx-auto">
+                        <div class="flex flex-col lg:flex-row gap-8">
+                            <div class="w-full lg:w-1/2 h-[300px] lg:h-[400px] bg-gray-200 rounded-xl relative overflow-hidden">
+                                <iframe class="w-full h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.488350587747!2d139.7749035!3d35.713768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188e9ce798604b%3A0x6442655060455854!2z5LiK6YeO6aeF!5e0!3m2!1sja!2sjp!4v1700000000000!5m2!1sja!2sjp" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                            <div class="w-full lg:w-1/2 flex flex-col justify-center">
+                                <h3 class="text-2xl font-bold mb-6 flex items-center gap-2">
+                                    <span class="text-brand-main">📍</span> YURUMU 上野店
+                                </h3>
+                                <dl class="space-y-4 text-gray-600 mb-6">
+                                    <div class="flex border-b border-gray-100 pb-3">
+                                        <dt class="w-24 font-bold text-sm">住所</dt>
+                                        <dd class="text-sm">東京都台東区上野4-○○-○○ ○○ビル3F</dd>
+                                    </div>
+                                    <div class="flex border-b border-gray-100 pb-3">
+                                        <dt class="w-24 font-bold text-sm">アクセス</dt>
+                                        <dd class="text-sm">上野駅広小路口より徒歩2分</dd>
+                                    </div>
+                                    <div class="flex border-b border-gray-100 pb-3">
+                                        <dt class="w-24 font-bold text-sm">電話</dt>
+                                        <dd class="text-sm">
+                                            <a href="tel:0368123456" class="text-brand-main font-bold hover:underline flex items-center gap-1">
+                                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                                                03-6812-3456
+                                            </a>
+                                        </dd>
+                                    </div>
+                                    <div class="flex border-b border-gray-100 pb-3">
+                                        <dt class="w-24 font-bold text-sm">営業時間</dt>
+                                        <dd class="text-sm">10:00 - 21:00（最終受付 20:00）</dd>
+                                    </div>
+                                    <div class="flex border-b border-gray-100 pb-3">
+                                        <dt class="w-24 font-bold text-sm">定休日</dt>
+                                        <dd class="text-sm">不定休</dd>
+                                    </div>
+                                </dl>
+                                <div class="flex flex-col sm:flex-row gap-3">
+                                    <a href="tel:0368123456" class="flex-1 bg-white border-2 border-brand-main text-brand-main text-center font-bold py-3 px-4 rounded-full transition hover:bg-brand-main hover:text-white flex items-center justify-center gap-2">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                                        電話予約
+                                    </a>
+                                    <a href="#reserve" class="flex-1 bg-[#06C755] hover:bg-[#05b54d] text-white text-center font-bold py-3 px-4 rounded-full shadow transition flex items-center justify-center gap-2">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.244-.73.244-1.088 0-.058 0-.144-.03-.215-.1-.172-2.434-1.39-2.678-1.39zm-2.908 7.593c-1.747 0-3.48-.53-4.942-1.49L7.793 24.41l1.132-3.337a8.955 8.955 0 0 1-1.72-5.272c0-4.955 4.04-8.995 8.997-8.995S25.2 10.845 25.2 15.8c0 4.958-4.04 8.998-8.998 8.998zm0-19.798c-5.96 0-10.8 4.842-10.8 10.8 0 1.964.53 3.898 1.546 5.574L5 27.176l5.974-1.92a10.807 10.807 0 0 0 16.03-9.455c0-5.958-4.842-10.8-10.802-10.8z"/></svg>
+                                        LINE予約
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    function showStore(storeName) {
+                        // 全ての店舗情報を非表示
+                        document.querySelectorAll('.store-info').forEach(el => el.classList.add('hidden'));
+                        // 選択された店舗を表示
+                        document.getElementById('store-' + storeName).classList.remove('hidden');
+
+                        // タブのスタイル更新
+                        document.querySelectorAll('.store-tab').forEach(tab => {
+                            if (tab.dataset.store === storeName) {
+                                tab.classList.remove('bg-gray-200', 'text-gray-600', 'hover:bg-gray-300');
+                                tab.classList.add('bg-brand-main', 'text-white');
+                            } else {
+                                tab.classList.remove('bg-brand-main', 'text-white');
+                                tab.classList.add('bg-gray-200', 'text-gray-600', 'hover:bg-gray-300');
+                            }
+                        });
+                    }
+                </script>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="bg-brand-dark text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="mb-6 md:mb-0">
+                    <span class="text-2xl font-bold tracking-tight">YURUMU</span>
+                    <p class="text-sm text-gray-400 mt-2">PLT × NAORU PROJECT</p>
+                </div>
+                <div class="flex gap-6 text-sm text-gray-400">
+                    <a href="#" class="hover:text-white transition">運営会社</a>
+                    <a href="#" class="hover:text-white transition">プライバシーポリシー</a>
+                    <a href="#" class="hover:text-white transition">お問い合わせ</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-sm text-gray-500">
+                &copy; 2025 YURUMU All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- モバイル固定CTAボタン -->
+    <div class="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white border-t border-gray-200 shadow-2xl px-4 py-3 safe-area-inset-bottom">
+        <div class="flex gap-2">
+            <a href="tel:0368123456" class="flex-1 bg-white border-2 border-brand-main text-brand-main font-bold py-3 px-4 rounded-full text-center transition active:scale-95 flex items-center justify-center gap-2">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                電話
+            </a>
+            <a href="#reserve" class="flex-1 bg-brand-main text-white font-bold py-3 px-4 rounded-full text-center shadow-lg transition active:scale-95">
+                WEB予約
+            </a>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // モバイルメニューの開閉
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn?.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // モバイルメニューのリンクをクリックしたら閉じる
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // スクロール時にヘッダーの影を調整
+        let lastScroll = 0;
+        const header = document.querySelector('header');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 100) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        // 日付入力の最小値を今日に設定
+        const dateInputs = document.querySelectorAll('input[type="date"]');
+        const today = new Date().toISOString().split('T')[0];
+        dateInputs.forEach(input => {
+            input.setAttribute('min', today);
+        });
+
+        // フォーム送信時の処理（実際の送信先に応じて変更）
+        const reserveForm = document.querySelector('#reserve form');
+        reserveForm?.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // フォームデータの取得
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData.entries());
+
+            // 実際のフォーム送信処理をここに実装
+            alert('ご予約ありがとうございます！\n24時間以内に確認のご連絡をさせていただきます。');
+
+            // フォームをリセット
+            e.target.reset();
+        });
+
+        // スムーズスクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href === '#' || href === '') return;
+
+                e.preventDefault();
+                const target = document.querySelector(href);
+
+                if (target) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Facebookシェア
+        function shareFacebook() {
+            const url = encodeURIComponent('https://yurumu.com');
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank', 'width=600,height=400');
+        }
+
+        // ページ表示数をカウント（実際はGoogle Analyticsなどを使用）
+        if (typeof localStorage !== 'undefined') {
+            let visitCount = parseInt(localStorage.getItem('yurumu_visits') || '0');
+            visitCount++;
+            localStorage.setItem('yurumu_visits', visitCount.toString());
+        }
+    </script>
+</body>
+</html>
