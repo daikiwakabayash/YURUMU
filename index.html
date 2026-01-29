@@ -37,15 +37,19 @@
                 extend: {
                     colors: {
                         brand: {
-                            main: '#32373c', // ダークグレー（RUFFREEスタイル）
-                            light: '#4a5057',
-                            bg: '#f8f9fa',   // 明るいグレー
-                            dark: '#1a1d20',
+                            main: '#8E84B3',      // ディープラベンダー（アクセント）
+                            light: '#A399C7',     // ライトラベンダー
+                            bg: '#F1F1EF',        // ウォームグレー（背景）
+                            secondary: '#D8D6D1', // ニュートラルグレージュ（区切り）
+                            text: '#2F2F2F',      // テキスト色
                         }
                     },
                     fontFamily: {
                         sans: ['"Noto Sans JP"', 'Arial', 'sans-serif'],
                         serif: ['"Noto Serif JP"', 'serif'],
+                    },
+                    borderRadius: {
+                        'brand': '8px', // 角丸8px統一
                     }
                 }
             }
@@ -54,7 +58,7 @@
     <style>
         body {
             font-family: 'Noto Sans JP', Arial, sans-serif;
-            color: #1a1d20;
+            color: #2F2F2F;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
@@ -138,16 +142,18 @@
         }
     </style>
 </head>
-<body class="bg-white">
+<body class="bg-brand-bg">
 
     <!-- ヘッダー -->
     <header class="bg-white/90 backdrop-blur-md sticky top-0 z-50 shadow-sm border-b border-gray-100">
         <div class="container mx-auto px-4 md:px-6 h-16 md:h-20 flex justify-between items-center">
             <!-- ロゴエリア -->
             <a href="#" class="flex items-center gap-2 group">
-                <svg class="w-8 h-8 text-brand-main group-hover:opacity-80 transition" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8"><path d="M50 8.3C64.6 8.3 75 18.7 75 33.3C75 44.4 68.7 50 62.5 54.1C56.2 58.3 50 62.5 50 91.6M50 33.3C50 20.8 41.6 12.5 33.3 12.5C25 12.5 16.6 20.8 16.6 33.3C16.6 45.8 25 54.1 33.3 54.1C41.6 54.1 50 45.8 50 33.3Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <div class="w-10 h-10 flex items-center justify-center">
+                    <span class="text-3xl">🧠</span>
+                </div>
                 <div class="flex flex-col">
-                    <span class="text-xl md:text-2xl font-bold tracking-tight text-gray-800 leading-none">YURUMU</span>
+                    <span class="text-xl md:text-2xl font-bold tracking-tight text-brand-text leading-none">YURUMU</span>
                     <span class="text-[10px] text-gray-500 font-medium">頭痛・自律神経専門サロン</span>
                 </div>
             </a>
@@ -199,11 +205,8 @@
             <div class="container mx-auto px-6 relative z-10 py-20">
                 <div class="max-w-2xl">
                     <div class="flex flex-wrap gap-2 mb-6">
-                         <span class="inline-block bg-brand-main text-white text-sm font-bold px-3 py-1 rounded-full">
+                         <span class="inline-block bg-brand-main text-white text-lg font-bold px-5 py-2 rounded-lg">
                             NEW OPEN
-                        </span>
-                        <span class="inline-block bg-brand-dark/10 text-brand-dark font-bold px-3 py-1 rounded-full text-sm">
-                            PLT × NAORU 技術提携
                         </span>
                     </div>
                     <h1 class="text-4xl md:text-6xl font-black leading-tight tracking-tight text-gray-800 mb-6">
@@ -217,26 +220,27 @@
                         頭痛や自律神経の悩みを、少しずつ整えていきます。
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#reserve" class="bg-brand-main hover:bg-brand-light text-white text-center font-bold py-4 px-8 rounded-full shadow-lg transition text-lg transform hover:-translate-y-1">
+                        <a href="#access" class="bg-brand-main hover:bg-brand-light text-white text-center font-bold py-4 px-8 rounded-lg transition text-lg">
                             初回体験を予約する
-                        </a>
-                        <a href="#about" class="bg-white hover:bg-gray-50 text-gray-700 text-center font-bold py-4 px-8 rounded-full shadow border border-gray-200 transition">
-                            詳しく見る
                         </a>
                     </div>
                     <!-- ソーシャルプルーフ -->
-                    <div class="mt-8 bg-white/90 backdrop-blur-sm p-4 rounded-2xl inline-block shadow-lg">
-                        <div class="flex flex-wrap items-center gap-6 text-sm">
+                    <div class="mt-8 bg-brand-secondary p-6 rounded-lg inline-block border-l-4 border-brand-main">
+                        <div class="flex flex-wrap items-center gap-8 text-sm">
                             <div>
-                                <p class="font-bold text-gray-800">お客様満足度</p>
-                                <div class="flex items-center gap-1">
-                                    <span class="text-xl font-bold text-gray-900">4.9</span>
-                                    <span class="text-yellow-400 text-lg">★★★★★</span>
+                                <p class="text-xs font-medium text-brand-text mb-1">お客様満足度</p>
+                                <div class="flex items-center gap-2">
+                                    <span class="text-3xl font-bold text-brand-text">4.9</span>
+                                    <span class="text-sm text-gray-600">/ 5.0</span>
                                 </div>
                             </div>
-                            <div class="border-l border-gray-300 pl-6">
-                                <p class="font-bold text-gray-800">リピート率</p>
-                                <p class="text-xl font-bold text-gray-900">92<span class="text-sm text-gray-600">%</span></p>
+                            <div class="border-l-2 border-gray-400 pl-8">
+                                <p class="text-xs font-medium text-brand-text mb-1">リピート率</p>
+                                <p class="text-3xl font-bold text-brand-text">92<span class="text-sm text-gray-600">%</span></p>
+                            </div>
+                            <div class="border-l-2 border-gray-400 pl-8">
+                                <p class="text-xs font-medium text-brand-text mb-1">施術実績</p>
+                                <p class="text-3xl font-bold text-brand-text">300<span class="text-sm text-gray-600">+</span></p>
                             </div>
                         </div>
                     </div>
@@ -245,23 +249,27 @@
         </section>
 
         <!-- 初回限定キャンペーンバナー -->
-        <section class="py-8 bg-brand-main">
+        <section class="py-12 bg-brand-main">
             <div class="container mx-auto px-6">
                 <div class="max-w-4xl mx-auto text-center text-white">
-                    <div class="flex items-center justify-center gap-2 mb-3">
-                        <span class="bg-white text-brand-main text-xs font-bold px-3 py-1 rounded-full animate-pulse">🎁 初回限定</span>
-                        <span class="text-xs font-medium">本日まで残り5枠</span>
+                    <div class="flex items-center justify-center gap-4 mb-4">
+                        <span class="bg-white text-brand-main text-xl md:text-2xl font-bold px-6 py-3 rounded-lg animate-pulse shadow-lg">
+                            🎁 初回限定
+                        </span>
+                        <span class="bg-red-500 text-white text-lg md:text-xl font-bold px-5 py-2 rounded-lg animate-bounce shadow-lg">
+                            残り5枠
+                        </span>
                     </div>
-                    <h2 class="text-2xl md:text-3xl font-bold mb-3">初回体験60分コース</h2>
-                    <p class="text-xl md:text-2xl font-bold mb-4">
-                        <span class="text-3xl md:text-4xl">¥5,000</span>
-                        <span class="text-sm font-normal ml-2">(税込)</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">初回体験60分コース</h2>
+                    <p class="text-2xl md:text-3xl font-bold mb-6">
+                        <span class="text-4xl md:text-5xl">¥5,000</span>
+                        <span class="text-lg font-normal ml-2">(税込)</span>
                     </p>
                     <div class="flex flex-col sm:flex-row gap-3 justify-center items-center mt-6">
-                        <a href="#reserve" class="bg-white text-gray-900 font-bold py-4 px-10 rounded-full shadow-xl transition transform hover:scale-105 text-lg">
+                        <a href="#access" class="bg-white text-brand-main font-bold py-5 px-12 rounded-lg transition transform hover:scale-105 text-xl shadow-2xl">
                             今すぐ予約する
                         </a>
-                        <p class="text-xs">※初回のみ・各店舗先着10名様限定</p>
+                        <p class="text-sm">※初回のみ・各店舗先着10名様限定</p>
                     </div>
                 </div>
             </div>
@@ -271,8 +279,7 @@
         <section class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-3xl font-bold mb-4">こんなお悩み、ありませんか？</h2>
-                    <p class="text-gray-500">日常の困りごとに、しっかり向き合います</p>
+                    <h2 class="text-3xl font-bold mb-8">こんなお悩み、ありませんか？</h2>
                 </div>
                 <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                     <!-- 悩み1 -->
@@ -547,39 +554,22 @@
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl font-bold mb-4">Voice</h2>
-                    <p class="text-gray-500 mb-6">施術体験者・モニター様の声</p>
-
-                    <!-- ソーシャルシェアボタン -->
-                    <div class="flex justify-center items-center gap-3 flex-wrap">
-                        <p class="text-sm text-gray-600 font-bold">シェアする:</p>
-                        <a href="https://twitter.com/intent/tweet?text=頭痛・自律神経専門サロンYURUMU｜初回50%OFF&url=https://yurumu.com" target="_blank" rel="noopener" class="bg-[#1DA1F2] hover:bg-[#1a8cd8] text-white px-4 py-2 rounded-lg text-sm font-bold transition flex items-center gap-2">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
-                            X
-                        </a>
-                        <a href="https://social-plugins.line.me/lineit/share?url=https://yurumu.com" target="_blank" rel="noopener" class="bg-[#06C755] hover:bg-[#05b54d] text-white px-4 py-2 rounded-lg text-sm font-bold transition flex items-center gap-2">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-                            LINE
-                        </a>
-                        <button onclick="shareFacebook()" class="bg-[#1877F2] hover:bg-[#166fe5] text-white px-4 py-2 rounded-lg text-sm font-bold transition flex items-center gap-2">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                            Facebook
-                        </button>
-                    </div>
+                    <p class="text-gray-500">施術体験者・モニター様の声</p>
                 </div>
 
                 <!-- 実績数字 -->
                 <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
-                    <div class="bg-white p-6 rounded-xl shadow-sm text-center border border-gray-100">
-                        <p class="text-gray-900 text-4xl font-bold mb-2">92%</p>
-                        <p class="text-sm text-gray-600">リピート率</p>
+                    <div class="bg-brand-secondary p-8 rounded-lg text-center border-l-4 border-brand-main">
+                        <p class="text-xs font-medium text-brand-text mb-2">リピート率</p>
+                        <p class="text-5xl font-bold text-brand-text">92<span class="text-2xl">%</span></p>
                     </div>
-                    <div class="bg-white p-6 rounded-xl shadow-sm text-center border border-gray-100">
-                        <p class="text-gray-900 text-4xl font-bold mb-2">4.9</p>
-                        <p class="text-sm text-gray-600">お客様満足度(5点満点)</p>
+                    <div class="bg-brand-secondary p-8 rounded-lg text-center border-l-4 border-brand-main">
+                        <p class="text-xs font-medium text-brand-text mb-2">お客様満足度</p>
+                        <p class="text-5xl font-bold text-brand-text">4.9<span class="text-lg text-gray-600"> / 5.0</span></p>
                     </div>
-                    <div class="bg-white p-6 rounded-xl shadow-sm text-center border border-gray-100">
-                        <p class="text-gray-900 text-4xl font-bold mb-2">300+</p>
-                        <p class="text-sm text-gray-600">施術実績(モニター含む)</p>
+                    <div class="bg-brand-secondary p-8 rounded-lg text-center border-l-4 border-brand-main">
+                        <p class="text-xs font-medium text-brand-text mb-2">施術実績</p>
+                        <p class="text-5xl font-bold text-brand-text">300<span class="text-2xl">+</span></p>
                     </div>
                 </div>
 
@@ -636,150 +626,6 @@
             </div>
         </section>
 
-        <!-- [NEW] 予約フォーム -->
-        <section id="reserve" class="py-20 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <div class="max-w-2xl mx-auto">
-                    <div class="text-center mb-12">
-                        <h2 class="text-3xl font-bold mb-4">WEB予約</h2>
-                        <p class="text-gray-500">フォームからのご予約は24時間受付中</p>
-                        <div class="mt-4 inline-flex items-center gap-2 bg-red-50 text-red-600 px-4 py-2 rounded-full text-sm font-bold">
-                            <span class="animate-pulse">🔥</span>
-                            本日の残り枠: <span class="text-xl">5組</span>
-                        </div>
-                    </div>
-
-                    <div class="bg-white p-6 md:p-10 rounded-2xl shadow-xl">
-                        <form class="space-y-6">
-                            <!-- 店舗選択 -->
-                            <div>
-                                <label class="block text-gray-700 font-bold mb-3">ご希望の店舗 <span class="text-red-500">*</span></label>
-                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                                    <label class="flex items-center justify-center p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-brand-main hover:bg-gray-50 transition">
-                                        <input type="radio" name="store" value="shinjuku" class="mr-2" required>
-                                        <span class="font-bold">新宿店</span>
-                                    </label>
-                                    <label class="flex items-center justify-center p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-brand-main hover:bg-gray-50 transition">
-                                        <input type="radio" name="store" value="ikebukuro" class="mr-2" required>
-                                        <span class="font-bold">池袋店</span>
-                                    </label>
-                                    <label class="flex items-center justify-center p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-brand-main hover:bg-gray-50 transition">
-                                        <input type="radio" name="store" value="ueno" class="mr-2" required>
-                                        <span class="font-bold">上野店</span>
-                                    </label>
-                                </div>
-                            </div>
-
-                            <!-- コース選択 -->
-                            <div>
-                                <label class="block text-gray-700 font-bold mb-3">コース <span class="text-red-500">*</span></label>
-                                <select name="course" required class="w-full p-4 border-2 border-gray-200 rounded-xl focus:border-brand-main focus:outline-none text-gray-700 font-medium">
-                                    <option value="">選択してください</option>
-                                    <option value="first-60">【初回限定】60分コース ¥6,000（50%OFF）</option>
-                                    <option value="quick-30">クイックケア 30分 ¥6,500</option>
-                                    <option value="standard-60">スタンダードケア 60分 ¥12,000</option>
-                                    <option value="ticket-30-3">30分×3回チケット ¥15,000</option>
-                                    <option value="ticket-60-3">60分×3回チケット ¥31,500</option>
-                                </select>
-                            </div>
-
-                            <!-- 日時選択 -->
-                            <div class="grid md:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-gray-700 font-bold mb-3">第1希望日 <span class="text-red-500">*</span></label>
-                                    <input type="date" name="date1" required class="w-full p-4 border-2 border-gray-200 rounded-xl focus:border-brand-main focus:outline-none">
-                                </div>
-                                <div>
-                                    <label class="block text-gray-700 font-bold mb-3">第1希望時間 <span class="text-red-500">*</span></label>
-                                    <select name="time1" required class="w-full p-4 border-2 border-gray-200 rounded-xl focus:border-brand-main focus:outline-none">
-                                        <option value="">選択してください</option>
-                                        <option value="10:00">10:00</option>
-                                        <option value="11:00">11:00</option>
-                                        <option value="12:00">12:00</option>
-                                        <option value="13:00">13:00</option>
-                                        <option value="14:00">14:00</option>
-                                        <option value="15:00">15:00</option>
-                                        <option value="16:00">16:00</option>
-                                        <option value="17:00">17:00</option>
-                                        <option value="18:00">18:00</option>
-                                        <option value="19:00">19:00</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="grid md:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-gray-700 font-bold mb-3">第2希望日</label>
-                                    <input type="date" name="date2" class="w-full p-4 border-2 border-gray-200 rounded-xl focus:border-brand-main focus:outline-none">
-                                </div>
-                                <div>
-                                    <label class="block text-gray-700 font-bold mb-3">第2希望時間</label>
-                                    <select name="time2" class="w-full p-4 border-2 border-gray-200 rounded-xl focus:border-brand-main focus:outline-none">
-                                        <option value="">選択してください</option>
-                                        <option value="10:00">10:00</option>
-                                        <option value="11:00">11:00</option>
-                                        <option value="12:00">12:00</option>
-                                        <option value="13:00">13:00</option>
-                                        <option value="14:00">14:00</option>
-                                        <option value="15:00">15:00</option>
-                                        <option value="16:00">16:00</option>
-                                        <option value="17:00">17:00</option>
-                                        <option value="18:00">18:00</option>
-                                        <option value="19:00">19:00</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <!-- お客様情報 -->
-                            <div>
-                                <label class="block text-gray-700 font-bold mb-3">お名前 <span class="text-red-500">*</span></label>
-                                <input type="text" name="name" required placeholder="山田 太郎" class="w-full p-4 border-2 border-gray-200 rounded-xl focus:border-brand-main focus:outline-none">
-                            </div>
-
-                            <div>
-                                <label class="block text-gray-700 font-bold mb-3">電話番号 <span class="text-red-500">*</span></label>
-                                <input type="tel" name="phone" required placeholder="090-1234-5678" class="w-full p-4 border-2 border-gray-200 rounded-xl focus:border-brand-main focus:outline-none">
-                            </div>
-
-                            <div>
-                                <label class="block text-gray-700 font-bold mb-3">メールアドレス <span class="text-red-500">*</span></label>
-                                <input type="email" name="email" required placeholder="example@email.com" class="w-full p-4 border-2 border-gray-200 rounded-xl focus:border-brand-main focus:outline-none">
-                            </div>
-
-                            <div>
-                                <label class="block text-gray-700 font-bold mb-3">ご相談内容・症状</label>
-                                <textarea name="message" rows="4" placeholder="頭痛、肩こり、自律神経の乱れなど、気になる症状をお聞かせください" class="w-full p-4 border-2 border-gray-200 rounded-xl focus:border-brand-main focus:outline-none resize-none"></textarea>
-                            </div>
-
-                            <!-- 送信ボタン -->
-                            <button type="submit" class="w-full bg-brand-main hover:bg-brand-light text-white font-bold py-5 px-8 rounded-full shadow-lg transition transform hover:-translate-y-1 text-lg">
-                                この内容で予約を申し込む
-                            </button>
-
-                            <p class="text-xs text-center text-gray-500">
-                                ※送信後、24時間以内に確認のご連絡をさせていただきます<br>
-                                ※お急ぎの場合はお電話でのご予約をおすすめします
-                            </p>
-                        </form>
-
-                        <!-- 電話・LINE予約 -->
-                        <div class="mt-10 pt-8 border-t border-gray-200">
-                            <p class="text-center text-gray-600 font-bold mb-4">その他の予約方法</p>
-                            <div class="flex flex-col sm:flex-row gap-3">
-                                <a href="tel:0312345678" class="flex-1 bg-white border-2 border-brand-main text-brand-main text-center font-bold py-4 px-6 rounded-full transition hover:bg-brand-main hover:text-white flex items-center justify-center gap-2">
-                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
-                                    電話で予約
-                                </a>
-                                <a href="https://line.me/R/ti/p/@yurumu" target="_blank" rel="noopener" class="flex-1 bg-[#06C755] hover:bg-[#05b54d] text-white text-center font-bold py-4 px-6 rounded-full shadow transition flex items-center justify-center gap-2">
-                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.244-.73.244-1.088 0-.058 0-.144-.03-.215-.1-.172-2.434-1.39-2.678-1.39zm-2.908 7.593c-1.747 0-3.48-.53-4.942-1.49L7.793 24.41l1.132-3.337a8.955 8.955 0 0 1-1.72-5.272c0-4.955 4.04-8.995 8.997-8.995S25.2 10.845 25.2 15.8c0 4.958-4.04 8.998-8.998 8.998zm0-19.798c-5.96 0-10.8 4.842-10.8 10.8 0 1.964.53 3.898 1.546 5.574L5 27.176l5.974-1.92a10.807 10.807 0 0 0 16.03-9.455c0-5.958-4.842-10.8-10.802-10.8z"/></svg>
-                                    LINEで予約
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- [NEW] FAQセクション -->
         <section id="faq" class="py-20 bg-white">
@@ -905,14 +751,18 @@
                                         <dd class="text-sm">不定休</dd>
                                     </div>
                                 </dl>
-                                <div class="flex flex-col sm:flex-row gap-3">
-                                    <a href="tel:0312345678" class="flex-1 bg-white border-2 border-brand-main text-brand-main text-center font-bold py-3 px-4 rounded-full transition hover:bg-brand-main hover:text-white flex items-center justify-center gap-2">
-                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
-                                        電話予約
+                                <div class="grid grid-cols-1 gap-3">
+                                    <a href="https://yurumu.com/reserve/shinjuku" target="_blank" class="bg-brand-main hover:bg-brand-light text-white text-center font-bold py-3 px-4 rounded-lg transition flex items-center justify-center gap-2">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"/></svg>
+                                        WEB予約
                                     </a>
-                                    <a href="#reserve" class="flex-1 bg-[#06C755] hover:bg-[#05b54d] text-white text-center font-bold py-3 px-4 rounded-full shadow transition flex items-center justify-center gap-2">
+                                    <a href="https://line.me/R/ti/p/@yurumu" target="_blank" rel="noopener" class="bg-[#06C755] hover:bg-[#05b54d] text-white text-center font-bold py-3 px-4 rounded-lg transition flex items-center justify-center gap-2">
                                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.244-.73.244-1.088 0-.058 0-.144-.03-.215-.1-.172-2.434-1.39-2.678-1.39zm-2.908 7.593c-1.747 0-3.48-.53-4.942-1.49L7.793 24.41l1.132-3.337a8.955 8.955 0 0 1-1.72-5.272c0-4.955 4.04-8.995 8.997-8.995S25.2 10.845 25.2 15.8c0 4.958-4.04 8.998-8.998 8.998zm0-19.798c-5.96 0-10.8 4.842-10.8 10.8 0 1.964.53 3.898 1.546 5.574L5 27.176l5.974-1.92a10.807 10.807 0 0 0 16.03-9.455c0-5.958-4.842-10.8-10.802-10.8z"/></svg>
                                         LINE予約
+                                    </a>
+                                    <a href="tel:0312345678" class="bg-white border-2 border-brand-main text-brand-main text-center font-bold py-3 px-4 rounded-lg transition hover:bg-brand-main hover:text-white flex items-center justify-center gap-2">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                                        電話予約
                                     </a>
                                 </div>
                             </div>
@@ -958,14 +808,18 @@
                                         <dd class="text-sm">不定休</dd>
                                     </div>
                                 </dl>
-                                <div class="flex flex-col sm:flex-row gap-3">
-                                    <a href="tel:0398765432" class="flex-1 bg-white border-2 border-brand-main text-brand-main text-center font-bold py-3 px-4 rounded-full transition hover:bg-brand-main hover:text-white flex items-center justify-center gap-2">
-                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
-                                        電話予約
+                                <div class="grid grid-cols-1 gap-3">
+                                    <a href="https://yurumu.com/reserve/ikebukuro" target="_blank" class="bg-brand-main hover:bg-brand-light text-white text-center font-bold py-3 px-4 rounded-lg transition flex items-center justify-center gap-2">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"/></svg>
+                                        WEB予約
                                     </a>
-                                    <a href="#reserve" class="flex-1 bg-[#06C755] hover:bg-[#05b54d] text-white text-center font-bold py-3 px-4 rounded-full shadow transition flex items-center justify-center gap-2">
+                                    <a href="https://line.me/R/ti/p/@yurumu" target="_blank" rel="noopener" class="bg-[#06C755] hover:bg-[#05b54d] text-white text-center font-bold py-3 px-4 rounded-lg transition flex items-center justify-center gap-2">
                                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.244-.73.244-1.088 0-.058 0-.144-.03-.215-.1-.172-2.434-1.39-2.678-1.39zm-2.908 7.593c-1.747 0-3.48-.53-4.942-1.49L7.793 24.41l1.132-3.337a8.955 8.955 0 0 1-1.72-5.272c0-4.955 4.04-8.995 8.997-8.995S25.2 10.845 25.2 15.8c0 4.958-4.04 8.998-8.998 8.998zm0-19.798c-5.96 0-10.8 4.842-10.8 10.8 0 1.964.53 3.898 1.546 5.574L5 27.176l5.974-1.92a10.807 10.807 0 0 0 16.03-9.455c0-5.958-4.842-10.8-10.802-10.8z"/></svg>
                                         LINE予約
+                                    </a>
+                                    <a href="tel:0398765432" class="bg-white border-2 border-brand-main text-brand-main text-center font-bold py-3 px-4 rounded-lg transition hover:bg-brand-main hover:text-white flex items-center justify-center gap-2">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                                        電話予約
                                     </a>
                                 </div>
                             </div>
@@ -1011,14 +865,18 @@
                                         <dd class="text-sm">不定休</dd>
                                     </div>
                                 </dl>
-                                <div class="flex flex-col sm:flex-row gap-3">
-                                    <a href="tel:0368123456" class="flex-1 bg-white border-2 border-brand-main text-brand-main text-center font-bold py-3 px-4 rounded-full transition hover:bg-brand-main hover:text-white flex items-center justify-center gap-2">
-                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
-                                        電話予約
+                                <div class="grid grid-cols-1 gap-3">
+                                    <a href="https://yurumu.com/reserve/ueno" target="_blank" class="bg-brand-main hover:bg-brand-light text-white text-center font-bold py-3 px-4 rounded-lg transition flex items-center justify-center gap-2">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"/></svg>
+                                        WEB予約
                                     </a>
-                                    <a href="#reserve" class="flex-1 bg-[#06C755] hover:bg-[#05b54d] text-white text-center font-bold py-3 px-4 rounded-full shadow transition flex items-center justify-center gap-2">
+                                    <a href="https://line.me/R/ti/p/@yurumu" target="_blank" rel="noopener" class="bg-[#06C755] hover:bg-[#05b54d] text-white text-center font-bold py-3 px-4 rounded-lg transition flex items-center justify-center gap-2">
                                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.244-.73.244-1.088 0-.058 0-.144-.03-.215-.1-.172-2.434-1.39-2.678-1.39zm-2.908 7.593c-1.747 0-3.48-.53-4.942-1.49L7.793 24.41l1.132-3.337a8.955 8.955 0 0 1-1.72-5.272c0-4.955 4.04-8.995 8.997-8.995S25.2 10.845 25.2 15.8c0 4.958-4.04 8.998-8.998 8.998zm0-19.798c-5.96 0-10.8 4.842-10.8 10.8 0 1.964.53 3.898 1.546 5.574L5 27.176l5.974-1.92a10.807 10.807 0 0 0 16.03-9.455c0-5.958-4.842-10.8-10.802-10.8z"/></svg>
                                         LINE予約
+                                    </a>
+                                    <a href="tel:0368123456" class="bg-white border-2 border-brand-main text-brand-main text-center font-bold py-3 px-4 rounded-lg transition hover:bg-brand-main hover:text-white flex items-center justify-center gap-2">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                                        電話予約
                                     </a>
                                 </div>
                             </div>
