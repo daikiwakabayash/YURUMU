@@ -150,18 +150,20 @@
         <div class="container mx-auto px-4 md:px-6 h-16 md:h-20 flex justify-between items-center">
             <!-- ロゴエリア -->
             <a href="#" class="flex items-center gap-2 group">
-                <div class="w-10 h-10 flex items-center justify-center bg-brand-main rounded-lg">
-                    <span class="text-2xl">🧠</span>
+                <div class="w-10 h-10 flex items-center justify-center bg-brand-main rounded-full">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+                    </svg>
                 </div>
                 <div class="flex flex-col">
                     <span class="text-xl md:text-2xl font-black tracking-tight text-brand-main leading-none">YURUMU</span>
-                    <span class="text-[10px] text-gray-600 font-bold">頭痛・自律神経専門サロン</span>
+                    <span class="text-[10px] text-gray-600 font-bold">整体・自律神経ケアサロン</span>
                 </div>
             </a>
             
             <!-- ナビゲーション（PC） -->
             <nav class="hidden md:flex items-center gap-8 text-sm font-bold text-gray-600">
-                <a href="#about" class="hover:text-brand-main transition">特徴</a>
+                <a href="#about" class="hover:text-brand-main transition">概要</a>
                 <a href="#flow" class="hover:text-brand-main transition">施術の流れ</a>
                 <a href="#menu" class="hover:text-brand-main transition">料金</a>
                 <a href="#voice" class="hover:text-brand-main transition">口コミ</a>
@@ -176,15 +178,18 @@
             </button>
 
             <!-- 予約ボタン -->
-            <a href="#reserve" class="hidden md:block bg-brand-main hover:bg-brand-light text-white font-bold py-3 px-6 rounded-full transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-sm md:text-base">
+            <a href="#reserve" class="hidden md:flex items-center gap-2 bg-brand-main hover:bg-brand-light text-white font-bold py-3 px-6 rounded-full transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-sm md:text-base">
                 予約する
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
             </a>
         </div>
 
         <!-- モバイルメニュー -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg">
             <nav class="container mx-auto px-4 py-4 flex flex-col gap-3">
-                <a href="#about" class="py-3 px-4 text-gray-700 font-bold hover:bg-gray-100 rounded-lg transition">特徴</a>
+                <a href="#about" class="py-3 px-4 text-gray-700 font-bold hover:bg-gray-100 rounded-lg transition">概要</a>
                 <a href="#flow" class="py-3 px-4 text-gray-700 font-bold hover:bg-gray-100 rounded-lg transition">施術の流れ</a>
                 <a href="#menu" class="py-3 px-4 text-gray-700 font-bold hover:bg-gray-100 rounded-lg transition">料金</a>
                 <a href="#voice" class="py-3 px-4 text-gray-700 font-bold hover:bg-gray-100 rounded-lg transition">口コミ</a>
@@ -196,11 +201,11 @@
 
     <main>
         <!-- ヒーローセクション -->
-        <section class="relative min-h-[85vh] flex items-center overflow-hidden bg-gradient-to-br from-white via-blue-50 to-brand-secondary">
-            <!-- 背景画像 - より落ち着いた医療的トーン -->
+        <section class="relative min-h-[85vh] flex items-center overflow-hidden bg-white">
+            <!-- 背景画像 - 施術台とグリーンの植物 -->
             <div class="absolute inset-0 z-0">
-                <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?q=80&w=2070&auto=format&fit=crop" alt="" class="w-full h-full object-cover opacity-15">
-                <div class="absolute inset-0 bg-gradient-to-br from-white/90 via-blue-50/90 to-brand-secondary/70"></div>
+                <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=2070&auto=format&fit=crop" alt="施術台" class="w-full h-full object-cover opacity-40">
+                <div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/75"></div>
             </div>
 
             <div class="container mx-auto px-4 md:px-6 relative z-10 py-16 md:py-24">
@@ -208,87 +213,120 @@
                     <!-- コンセプトタグ -->
                     <div class="mb-6 md:mb-8">
                          <span class="inline-block bg-brand-main/10 text-brand-main text-sm md:text-base font-bold px-5 py-2.5 rounded-md border-2 border-brand-main/20">
-                            自律神経を「本気で整えたい・根本から変えたい人」向け
+                            自律神経を「本気で変えたい・根から変えたい人」向け
                         </span>
                     </div>
 
                     <!-- メインコピー -->
                     <h1 class="text-3xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight text-brand-text mb-6 md:mb-8">
-                        自律神経の乱れを、<br class="hidden md:block">
+                        心と身体の不調、<br class="hidden md:block">
                         <span class="relative inline-block">
-                            構造から整える。
+                            根本から改善。
                             <span class="absolute bottom-0 left-0 w-full h-3 bg-brand-main/20 -z-10"></span>
-                        </span>
+                        </span><br>
+                        YURUMで数の月へ
                     </h1>
 
                     <!-- サブコピー -->
                     <div class="mb-8 md:mb-10">
-                        <p class="text-lg md:text-2xl text-brand-text font-bold mb-4 leading-relaxed">
-                            一時的なリラックスでは終わらせない。<br>
-                            頭痛・不調を繰り返さない身体へ。
-                        </p>
-                        <p class="text-base md:text-lg text-gray-600 font-medium leading-relaxed">
-                            医療と整体の間にある、自律神経専門ケア
+                        <p class="text-lg md:text-2xl text-brand-text font-bold leading-relaxed">
+                            頭痛・めまい・睡眠障害。諦める前に伴走者を。
                         </p>
                     </div>
 
-                    <!-- 特徴リスト -->
-                    <div class="mb-8 md:mb-10 grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
-                        <div class="flex items-start gap-2 bg-white/80 backdrop-blur-sm p-4 rounded-lg border border-brand-main/10">
-                            <svg class="w-5 h-5 text-brand-main flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-sm font-bold text-brand-text">民間ケア<br class="md:hidden">でも理論・再現性がある</span>
-                        </div>
-                        <div class="flex items-start gap-2 bg-white/80 backdrop-blur-sm p-4 rounded-lg border border-brand-main/10">
-                            <svg class="w-5 h-5 text-brand-main flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-sm font-bold text-brand-text">フワッとしていない<br class="md:hidden">構造的アプローチ</span>
-                        </div>
-                        <div class="flex items-start gap-2 bg-white/80 backdrop-blur-sm p-4 rounded-lg border border-brand-main/10">
-                            <svg class="w-5 h-5 text-brand-main flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-sm font-bold text-brand-text">再発しにくい状態を<br class="md:hidden">目指す</span>
+                    <!-- 施術写真とCTA -->
+                    <div class="flex flex-col md:flex-row gap-6 items-start">
+                        <!-- 施術写真（左側） -->
+                        <div class="flex gap-4 mb-4 md:mb-0">
+                            <div class="w-32 h-32 md:w-40 md:h-40 rounded-lg overflow-hidden shadow-lg">
+                                <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=400&h=400&fit=crop" alt="施術風景1" class="w-full h-full object-cover">
+                            </div>
+                            <div class="w-32 h-32 md:w-40 md:h-40 rounded-lg overflow-hidden shadow-lg">
+                                <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=400&h=400&fit=crop" alt="施術風景2" class="w-full h-full object-cover">
+                            </div>
                         </div>
                     </div>
 
                     <!-- CTA -->
-                    <div class="flex flex-col sm:flex-row gap-4 mb-10">
-                        <a href="#access" class="bg-gradient-to-r from-brand-main to-brand-light hover:from-brand-light hover:to-brand-main text-white text-center font-black py-5 px-12 rounded-xl transition-all duration-300 text-base md:text-xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105">
-                            初回評価・体験を予約する
+                    <div class="flex flex-col sm:flex-row gap-4 mt-8">
+                        <a href="#reserve" class="bg-gradient-to-r from-brand-main to-brand-light hover:from-brand-light hover:to-brand-main text-white text-center font-black py-4 px-8 rounded-full transition-all duration-300 text-base md:text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            初回限定！特体験を予約
                         </a>
-                        <a href="#about" class="bg-white hover:bg-gray-50 text-brand-main text-center font-black py-5 px-12 rounded-xl transition-all duration-300 text-base md:text-xl border-3 border-brand-main shadow-lg hover:shadow-xl">
-                            詳しく見る
+                        <a href="#voice" class="bg-white hover:bg-gray-50 text-brand-main text-center font-black py-4 px-8 rounded-full transition-all duration-300 text-base md:text-lg border-2 border-brand-main shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
+                                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
+                            </svg>
+                            お客様体験を見る
                         </a>
                     </div>
+                </div>
+            </div>
+        </section>
 
-                    <!-- ソーシャルプルーフ -->
-                    <div class="bg-white p-6 md:p-8 rounded-2xl shadow-xl border-l-4 border-brand-main">
-                        <div class="grid grid-cols-3 gap-4 md:gap-8">
-                            <div class="text-center md:text-left">
-                                <p class="text-xs font-bold text-gray-500 mb-2">お客様満足度</p>
-                                <div class="flex items-baseline justify-center md:justify-start gap-1">
-                                    <span class="text-3xl md:text-4xl font-black text-brand-main">4.9</span>
-                                    <span class="text-xs text-gray-500 font-bold">/ 5.0</span>
-                                </div>
-                            </div>
-                            <div class="text-center md:text-left border-l-2 border-brand-main/20 pl-4">
-                                <p class="text-xs font-bold text-gray-500 mb-2">リピート率</p>
-                                <div class="flex items-baseline justify-center md:justify-start gap-0.5">
-                                    <span class="text-3xl md:text-4xl font-black text-brand-main">92</span>
-                                    <span class="text-xl font-black text-brand-main">%</span>
-                                </div>
-                            </div>
-                            <div class="text-center md:text-left border-l-2 border-brand-main/20 pl-4">
-                                <p class="text-xs font-bold text-gray-500 mb-2">施術実績</p>
-                                <div class="flex items-baseline justify-center md:justify-start gap-0.5">
-                                    <span class="text-3xl md:text-4xl font-black text-brand-main">300</span>
-                                    <span class="text-xl font-black text-brand-main">+</span>
-                                </div>
+        <!-- YURUMが選ばれる理由 -->
+        <section class="py-16 md:py-20 bg-gradient-to-br from-blue-50 to-white">
+            <div class="container mx-auto px-4 md:px-6">
+                <h2 class="text-2xl md:text-4xl font-black text-center mb-12 md:mb-16 text-brand-text">
+                    YURUMが選ばれる理由
+                </h2>
+                <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!-- カード1：根本原因へのアプローチ -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="flex items-center justify-center mb-6">
+                            <div class="w-20 h-20 rounded-full bg-brand-main/10 flex items-center justify-center">
+                                <svg class="w-10 h-10 text-brand-main" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+                                    <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"/>
+                                </svg>
                             </div>
                         </div>
+                        <h3 class="text-lg font-black text-center mb-3 text-brand-text">
+                            根本原因へのアプローチ
+                        </h3>
+                        <p class="text-sm text-gray-600 text-center leading-relaxed">
+                            一時的な症状緩和ではなく、構造的な問題にアプローチします
+                        </p>
+                    </div>
+
+                    <!-- カード2：高満足度とリピート率 -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="flex items-center justify-center mb-6">
+                            <div class="w-20 h-20 rounded-full bg-brand-main/10 flex items-center justify-center">
+                                <svg class="w-10 h-10 text-brand-main" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-.464 5.535a1 1 0 10-1.415-1.414 3 3 0 01-4.242 0 1 1 0 00-1.415 1.414 5 5 0 007.072 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-black text-center mb-3 text-brand-text">
+                            高満足度とリピート率
+                        </h3>
+                        <div class="text-center mb-3">
+                            <span class="text-4xl font-black text-brand-main">92%+</span>
+                        </div>
+                        <p class="text-sm text-gray-600 text-center leading-relaxed">
+                            お客様満足度とリピート率の高さが信頼の証です
+                        </p>
+                    </div>
+
+                    <!-- カード3：群雄専員な開序実される校数 -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="flex items-center justify-center mb-6">
+                            <div class="w-20 h-20 rounded-full bg-brand-main/10 flex items-center justify-center">
+                                <svg class="w-10 h-10 text-brand-main" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-black text-center mb-3 text-brand-text">
+                            経験豊富な開院実績
+                        </h3>
+                        <p class="text-sm text-gray-600 text-center leading-relaxed">
+                            専門資格を持つスタッフが丁寧に対応します
+                        </p>
                     </div>
                 </div>
             </div>
