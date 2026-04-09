@@ -24,6 +24,10 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}
 .store-bar__cta:hover{background:var(--gold-light)}
 
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;padding:80px 24px 60px;overflow:hidden;background:linear-gradient(160deg,#F5F0E8 0%,#EDE8DF 40%,#E8E2D6 100%)}
+.hero--has-bg{background:none}
+.hero__bg{position:absolute;inset:0;z-index:0}
+.hero__bg img{width:100%;height:100%;object-fit:cover}
+.hero__bg::after{content:'';position:absolute;inset:0;background:linear-gradient(160deg,rgba(245,240,232,.88) 0%,rgba(237,232,223,.82) 40%,rgba(232,226,214,.78) 100%)}
 .hero::before{content:'';position:absolute;top:-20%;right:-10%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(139,158,130,.12) 0%,transparent 70%);pointer-events:none}
 .hero::after{content:'';position:absolute;bottom:-10%;left:-5%;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(196,169,106,.08) 0%,transparent 70%);pointer-events:none}
 .hero__inner{max-width:900px;text-align:center;position:relative;z-index:1}
@@ -54,7 +58,7 @@ section{padding:100px 24px}
 .gallery{background:var(--cream);padding:80px 24px 0;overflow:hidden}
 .gallery__inner{max-width:1200px;margin:0 auto}
 .gallery__label{text-align:center;font-size:10px;letter-spacing:5px;color:var(--sage);text-transform:uppercase;margin-bottom:32px;font-weight:500}
-.gallery__strip{display:grid;grid-template-columns:2fr 1fr 1fr 2fr;gap:12px;height:320px}
+.gallery__strip{display:grid;grid-template-columns:2fr 1fr 1fr 2fr;gap:16px;height:420px}
 .gallery__item{border-radius:6px;overflow:hidden;position:relative}
 .gallery__img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
 .gallery__item:hover .gallery__img{transform:scale(1.05)}
@@ -285,7 +289,7 @@ footer .copy{font-size:10px;letter-spacing:1px}
 @media(max-width:768px){
   .store-bar{padding:0 12px;height:48px}.store-bar__logo{font-size:14px;letter-spacing:2px}.store-tab{padding:4px 12px;font-size:10px}.store-bar__cta{padding:6px 16px;font-size:10px}
   section{padding:72px 20px}
-  .gallery__strip{grid-template-columns:1fr 1fr;height:auto;gap:8px}.gallery__item{height:160px}
+  .gallery__strip{grid-template-columns:1fr 1fr;height:auto;gap:10px}.gallery__item{height:200px}
   .troubles__grid{grid-template-columns:1fr 1fr;gap:12px}.trouble-card__img{height:140px}
   .concept__points{grid-template-columns:1fr;gap:20px}
   .approach__step{flex-direction:column;align-items:center;text-align:center;gap:20px}.approach__steps::before{display:none}.approach__step-num{width:60px;height:60px;font-size:22px}
@@ -313,8 +317,11 @@ footer .copy{font-size:10px;letter-spacing:1px}
   ║     <img src="images/ファイル名.jpg" alt="説明"> に置き換え       ║
   ║                                                                  ║
   ║  【画像一覧（推奨サイズ）】                                      ║
-  ║  Gallery:  interior-1.jpg (800×400), interior-2.jpg (400×400)    ║
-  ║           interior-3.jpg (400×400), interior-4.jpg (800×400)     ║
+  ║  TOP(hero): TOP/hero.jpg (1920×1080) ※ファーストビュー背景      ║
+  ║  Gallery:  images/interior-1.jpg (800×400),                      ║
+  ║           images/interior-2.jpg (400×400)                        ║
+  ║           images/interior-3.jpg (400×400),                       ║
+  ║           images/interior-4.jpg (800×400)                        ║
   ║  Troubles: trouble-headache.jpg, trouble-insomnia.jpg,           ║
   ║           trouble-medicine.jpg, trouble-fatigue.jpg (各400×300)  ║
   ║  Strengths: strength-01〜06.jpg (各400×280)                      ║
@@ -372,7 +379,14 @@ footer .copy{font-size:10px;letter-spacing:1px}
   <a href="#stores" class="store-bar__cta">ご予約はこちら</a>
 </nav>
 
-<section class="hero" id="top">
+<!-- ▼ ファーストビュー背景画像の埋め込み方:
+     1. TOP/ フォルダに画像を配置（例: TOP/hero.jpg）
+     2. 下の <img src="TOP/hero.jpg"> のファイル名を合わせるだけで表示されます
+     3. 画像がない場合はグラデーション背景が表示されます（推奨: 1920×1080px） -->
+<section class="hero hero--has-bg" id="top">
+  <div class="hero__bg">
+    <img src="TOP/hero.jpg" alt="YURUMU ファーストビュー">
+  </div>
   <div class="hero__inner">
     <div class="hero__badge">頭痛・自律神経ケア専門</div>
     <h1 class="hero__brand">YURUMU</h1>
@@ -747,6 +761,7 @@ document.querySelectorAll('.faq__item').forEach(item=>{item.addEventListener('cl
 const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 document.querySelectorAll('.troubles__grid .reveal,.concept__points .reveal,.strengths__grid .reveal,.voices__grid .reveal').forEach((el,i)=>{el.style.transitionDelay=(i*.1)+'s'});
+const heroBg=document.querySelector('.hero__bg img');if(heroBg){heroBg.addEventListener('error',()=>{const hero=document.querySelector('.hero');hero.classList.remove('hero--has-bg');heroBg.parentElement.remove()})}
 </script>
 </body>
 </html>
