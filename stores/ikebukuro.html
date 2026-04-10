@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YURUMU 池袋店｜頭痛・自律神経の根本施術専門</title>
+  <meta name="description" content="YURUMU池袋店のご案内。頭痛・自律神経の根本施術専門サロン。池袋駅より徒歩圏内。姿勢の歪みや自律神経のバランスを整え、慢性的な不調を根本から改善します。">
+  <link rel="canonical" href="/stores/ikebukuro.html">
+  <meta property="og:title" content="YURUMU 池袋店｜頭痛・自律神経の根本施術専門">
+  <meta property="og:description" content="YURUMU池袋店のご案内。頭痛・自律神経の根本施術専門サロン。池袋駅より徒歩圏内。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="/stores/ikebukuro.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .store-hero {
+      position: relative;
+      background: var(--cream);
+      padding: 160px 24px 100px;
+      text-align: center;
+      overflow: hidden;
+    }
+    .store-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(ellipse at 30% 50%, rgba(139,158,130,.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .store-hero__badge {
+      display: inline-block;
+      background: var(--sage);
+      color: var(--white);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      padding: 6px 20px;
+      border-radius: 2px;
+      margin-bottom: 24px;
+    }
+    .store-hero__en {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      color: var(--charcoal);
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .store-hero__ja {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1rem, 2.5vw, 1.5rem);
+      font-weight: 300;
+      color: var(--warm-gray);
+      letter-spacing: 0.1em;
+    }
+
+    .store-info {
+      background: var(--white);
+    }
+    .store-info__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .store-info__item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--text-primary);
+    }
+    .store-info__icon {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+    .store-info__label {
+      font-weight: 500;
+      font-size: 0.8rem;
+      color: var(--warm-gray);
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .store-map {
+      background: var(--cream-light);
+    }
+    .store-map iframe {
+      width: 100%;
+      height: 400px;
+      border: 0;
+      border-radius: 8px;
+    }
+
+    .store-booking {
+      background: var(--white);
+    }
+    .store-booking__buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .store-booking__btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 32px;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      min-width: 200px;
+      justify-content: center;
+    }
+    .store-booking__btn--tel {
+      background: var(--sage);
+      color: var(--white);
+    }
+    .store-booking__btn--tel:hover {
+      background: var(--sage-dark);
+    }
+    .store-booking__btn--line {
+      background: #06C755;
+      color: var(--white);
+    }
+    .store-booking__btn--line:hover {
+      background: #05b04c;
+    }
+    .store-booking__btn--reserve {
+      background: var(--charcoal);
+      color: var(--white);
+    }
+    .store-booking__btn--reserve:hover {
+      background: #1a1a1a;
+    }
+
+    .store-gallery {
+      background: var(--cream-light);
+    }
+    .store-gallery__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .store-gallery__item {
+      aspect-ratio: 4 / 3;
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--cream);
+    }
+    .store-gallery__item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .store-gallery__item:hover img {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .store-hero {
+        padding: 120px 20px 72px;
+      }
+      .store-info__grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .store-booking__buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      .store-booking__btn {
+        width: 100%;
+        max-width: 320px;
+      }
+      .store-gallery__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .store-map iframe {
+        height: 300px;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "YURUMU 池袋店",
+    "description": "頭痛・自律神経の根本施術専門サロン",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "豊島区",
+      "addressRegion": "東京都",
+      "addressCountry": "JP"
+    },
+    "telephone": "03-1234-5678",
+    "openingHours": "Mo-Su 10:00-20:00",
+    "url": "/stores/ikebukuro.html",
+    "priceRange": "¥6,600〜¥66,000"
+  }
+  </script>
+</head>
+<body>
+
+  <nav class="store-bar">
+    <div class="store-bar__left">
+      <div class="store-bar__logo"><a href="/">YURUMU</a></div>
+      <div class="nav-links">
+        <a href="/#concept" class="nav-link">コンセプト</a>
+        <a href="/#approach" class="nav-link">施術の流れ</a>
+        <a href="/#pricing" class="nav-link">料金</a>
+        <a href="/stores/ikebukuro.html" class="nav-link">池袋店</a>
+        <a href="/stores/kamata.html" class="nav-link">蒲田店</a>
+        <a href="/column/" class="nav-link">コラム</a>
+      </div>
+    </div>
+    <a href="/#stores" class="store-bar__cta">ご予約はこちら</a>
+  </nav>
+
+  <!-- Hero -->
+  <section class="store-hero">
+    <span class="store-hero__badge">OPEN</span>
+    <h1 class="store-hero__en">IKEBUKURO</h1>
+    <p class="store-hero__ja">YURUMU 池袋店</p>
+  </section>
+
+  <!-- Store Info -->
+  <section class="store-info section">
+    <div class="section-inner">
+      <span class="section-label">STORE INFO</span>
+      <h2 class="section-title">店舗情報</h2>
+      <div class="store-info__grid">
+        <div class="store-info__item">
+          <span class="store-info__icon">📍</span>
+          <div>
+            <span class="store-info__label">住所</span>
+            東京都豊島区池袋（詳細はご予約時にご案内）
+          </div>
+        </div>
+        <div class="store-info__item">
+          <span class="store-info__icon">🕐</span>
+          <div>
+            <span class="store-info__label">営業時間</span>
+            10:00〜20:00（最終受付 19:00）
+          </div>
+        </div>
+        <div class="store-info__item">
+          <span class="store-info__icon">📅</span>
+          <div>
+            <span class="store-info__label">定休日</span>
+            不定休（土日営業）
+          </div>
+        </div>
+        <div class="store-info__item">
+          <span class="store-info__icon">🚶</span>
+          <div>
+            <span class="store-info__label">アクセス</span>
+            池袋駅より徒歩圏内
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="store-map section">
+    <div class="section-inner">
+      <span class="section-label">ACCESS</span>
+      <h2 class="section-title">アクセス</h2>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.36!2d139.7089!3d35.7295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d5d826db66b%3A0xf0f18d029e21cdfe!2z5rGg6KKL6aeF!5e0!3m2!1sja!2sjp!4v1700000000000"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="YURUMU池袋店 アクセスマップ">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- Booking -->
+  <section class="store-booking section">
+    <div class="section-inner">
+      <span class="section-label">RESERVATION</span>
+      <h2 class="section-title">ご予約・お問い合わせ</h2>
+      <div class="store-booking__buttons">
+        <a href="tel:0312345678" class="store-booking__btn store-booking__btn--tel">
+          📞 電話で予約
+        </a>
+        <a href="https://line.me/R/" class="store-booking__btn store-booking__btn--line" target="_blank" rel="noopener noreferrer">
+          💬 LINEで予約
+        </a>
+        <a href="#" class="store-booking__btn store-booking__btn--reserve">
+          📋 予約はこちら
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="section" id="pricing">
+    <div class="section-inner">
+      <span class="section-label">PRICING</span>
+      <h2 class="section-title">料金</h2>
+      <div class="pricing-tabs">
+        <button class="pricing-tab active" data-tab="30min">30分コース</button>
+        <button class="pricing-tab" data-tab="60min">60分コース</button>
+      </div>
+      <div class="pricing-content active" id="30min">
+        <div class="pricing-cards">
+          <div class="pricing-card">
+            <div class="pricing-card__header">
+              <h3 class="pricing-card__title">都度払い</h3>
+            </div>
+            <div class="pricing-card__price">
+              <span class="pricing-card__yen">&yen;</span>6,600
+            </div>
+            <p class="pricing-card__note">1回あたり 6,600円</p>
+          </div>
+          <div class="pricing-card pricing-card--recommended">
+            <div class="pricing-card__header">
+              <h3 class="pricing-card__title">3回チケット</h3>
+              <span class="pricing-card__badge">おすすめ</span>
+            </div>
+            <div class="pricing-card__price">
+              <span class="pricing-card__yen">&yen;</span>18,150
+            </div>
+            <p class="pricing-card__note">1回あたり 6,050円</p>
+          </div>
+          <div class="pricing-card">
+            <div class="pricing-card__header">
+              <h3 class="pricing-card__title">6回チケット</h3>
+            </div>
+            <div class="pricing-card__price">
+              <span class="pricing-card__yen">&yen;</span>33,000
+            </div>
+            <p class="pricing-card__note">1回あたり 5,500円</p>
+          </div>
+        </div>
+      </div>
+      <div class="pricing-content" id="60min">
+        <div class="pricing-cards">
+          <div class="pricing-card">
+            <div class="pricing-card__header">
+              <h3 class="pricing-card__title">都度払い</h3>
+            </div>
+            <div class="pricing-card__price">
+              <span class="pricing-card__yen">&yen;</span>13,200
+            </div>
+            <p class="pricing-card__note">1回あたり 13,200円</p>
+          </div>
+          <div class="pricing-card pricing-card--recommended">
+            <div class="pricing-card__header">
+              <h3 class="pricing-card__title">3回チケット</h3>
+              <span class="pricing-card__badge">おすすめ</span>
+            </div>
+            <div class="pricing-card__price">
+              <span class="pricing-card__yen">&yen;</span>36,300
+            </div>
+            <p class="pricing-card__note">1回あたり 12,100円</p>
+          </div>
+          <div class="pricing-card">
+            <div class="pricing-card__header">
+              <h3 class="pricing-card__title">6回チケット</h3>
+            </div>
+            <div class="pricing-card__price">
+              <span class="pricing-card__yen">&yen;</span>66,000
+            </div>
+            <p class="pricing-card__note">1回あたり 11,000円</p>
+          </div>
+        </div>
+      </div>
+      <p class="pricing-note">※ 料金はすべて税込です</p>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="store-gallery section">
+    <div class="section-inner">
+      <span class="section-label">INTERIOR</span>
+      <h2 class="section-title">店内の雰囲気</h2>
+      <div class="store-gallery__grid">
+        <div class="store-gallery__item">
+          <img src="/images/interior-1.jpg" alt="YURUMU池袋店 店内写真1" loading="lazy">
+        </div>
+        <div class="store-gallery__item">
+          <img src="/images/interior-2.jpg" alt="YURUMU池袋店 店内写真2" loading="lazy">
+        </div>
+        <div class="store-gallery__item">
+          <img src="/images/interior-3.jpg" alt="YURUMU池袋店 店内写真3" loading="lazy">
+        </div>
+        <div class="store-gallery__item">
+          <img src="/images/interior-4.jpg" alt="YURUMU池袋店 店内写真4" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="section-inner">
+      <span class="section-label">FAQ</span>
+      <h2 class="section-title">よくあるご質問</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>施術は痛くないですか？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>当院の施術は、強い力で押したり揉んだりする手技ではありません。ソフトなタッチで筋膜や自律神経にアプローチするため、痛みはほとんどなく、施術中に眠ってしまう方も多くいらっしゃいます。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>どのくらいの頻度で通えばいいですか？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>症状や状態により異なりますが、最初は週1回程度をおすすめしています。改善が見られてきたら、2週間に1回、月1回とメンテナンス間隔に移行していきます。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>1回の施術でも効果はありますか？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>1回の施術でも変化を感じていただける方は多いです。ただし、慢性的な症状の根本改善には継続的な施術が効果的です。まずは3回を目安にお試しください。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>予約なしでも受けられますか？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>完全予約制となっております。お電話またはLINEよりご予約ください。当日予約も空きがあれば対応可能です。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>どんな服装で行けばいいですか？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>動きやすい服装であればそのまま施術を受けていただけます。お着替えのご用意もありますので、お仕事帰りでもお気軽にお越しください。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>保険は使えますか？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>申し訳ございませんが、当院は自費施術のみとなっております。保険適用外ですが、根本的な改善を目指した質の高い施術を提供しております。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta-section">
+    <div class="section-inner" style="text-align: center;">
+      <span class="section-label">RESERVATION</span>
+      <h2 class="section-title">まずはお気軽にご相談ください</h2>
+      <p style="color: var(--warm-gray); margin-bottom: 32px; line-height: 1.8;">
+        頭痛や自律神経の不調でお悩みの方、<br>
+        根本からの改善を一緒に目指しましょう。
+      </p>
+      <div class="store-booking__buttons">
+        <a href="tel:0312345678" class="store-booking__btn store-booking__btn--tel">
+          📞 電話で予約
+        </a>
+        <a href="https://line.me/R/" class="store-booking__btn store-booking__btn--line" target="_blank" rel="noopener noreferrer">
+          💬 LINEで予約
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="logo"><a href="/" style="color:inherit">YURUMU</a></div>
+    <div class="tagline">頭痛・自律神経ケア専門｜根本施術</div>
+    <div class="links">
+      <a href="/#concept">コンセプト</a>
+      <a href="/#approach">施術の流れ</a>
+      <a href="/#pricing">料金</a>
+      <a href="/stores/ikebukuro.html">池袋店</a>
+      <a href="/stores/kamata.html">蒲田店</a>
+      <a href="/column/">コラム</a>
+    </div>
+    <div class="copy">&copy; 2026 YURUMU All Rights Reserved.</div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
