@@ -326,10 +326,14 @@ footer .copy{font-size:10px;letter-spacing:1px}
 .hero__bg{position:relative;inset:auto}
 .hero__bg img,.hero__bg .swap-img{width:100%;height:auto;object-fit:unset;max-width:none;display:block;object-position:initial}
 
-/* モバイル: ヒーローを画面いっぱい（100svh）に展開し、画像で画面を完全に占有 */
+/* picture 要素を block にして子 img の幅/高さ 100% を有効化 */
+.hero__bg picture{display:block;width:100%}
+
+/* モバイル: スマホ用縦長画像（hero-mobile.jpg）を 100svh で画面いっぱいに表示 */
 @media(max-width:768px){
   .hero{min-height:100vh;min-height:100svh;padding-top:48px;position:relative;overflow:hidden}
   .hero__bg{position:absolute;inset:48px 0 0 0}
+  .hero__bg picture{height:100%}
   .hero__bg img,.hero__bg .swap-img{width:100%;height:100%;object-fit:cover;object-position:center center;max-width:none}
 }
 
@@ -358,7 +362,8 @@ footer .copy{font-size:10px;letter-spacing:1px}
   ║  【ファイル一覧チェックリスト（合計20枚）】                     ║
   ║                                                                  ║
   ║  ◆ ファーストビュー（最も大きく表示・最優先）                   ║
-  ║   □ images/hero.jpg                          1920×1080以上推奨   ║
+  ║   ✓ images/hero.jpg                          1920×1080 PC用     ║
+  ║   ✓ images/hero-mobile.jpg                   1080×1920 スマホ用 ║
   ║                                                                  ║
   ║  ◆ ギャラリー（内装写真・既に配置済み）                         ║
   ║   ✓ images/interior-1.jpg                    800×400             ║
@@ -447,13 +452,16 @@ footer .copy{font-size:10px;letter-spacing:1px}
   <a href="#stores" class="store-bar__cta">ご予約はこちら</a>
 </nav>
 
-<!-- ▼ ファーストビュー背景画像（最も大きく表示される画像）:
-     images/hero.jpg として画像ファイルを配置するだけで自動表示されます
-     推奨サイズ: 1920×1080px 以上（横長・JPG/WebP推奨）
-     画像がない間は暗色グラデーション + 配置ヒントが表示されます -->
+<!-- ▼ ファーストビュー背景画像（PC・スマホで自動切替）:
+     PC用:    images/hero.jpg          推奨 1920×1080px（横長）
+     スマホ用: images/hero-mobile.jpg  推奨 1080×1920px（縦長）
+     画面幅 768px 以下でスマホ用画像、それ以上で PC 用画像が自動表示されます -->
 <section class="hero" id="top">
   <div class="hero__bg">
-    <img src="images/hero.jpg" alt="YURUMU ファーストビュー" class="swap-img" onerror="this.style.display='none';document.getElementById('hero-bg-ph').style.display='flex'">
+    <picture>
+      <source media="(max-width: 768px)" srcset="images/hero-mobile.jpg">
+      <img src="images/hero.jpg" alt="YURUMU ファーストビュー" class="swap-img" onerror="this.style.display='none';document.getElementById('hero-bg-ph').style.display='flex'">
+    </picture>
     <div class="hero__bg-placeholder" id="hero-bg-ph" style="display:none">
       <span class="ph-icon">📷</span>
       <span>ヒーロー背景画像</span>
