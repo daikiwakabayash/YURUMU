@@ -11,6 +11,9 @@ if(location.hash)history.replaceState(null,'',location.pathname+location.search)
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Noto+Serif+JP:wght@200;300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
+<!-- ヒーロー画像の早期読み込み（モバイルは縦長版、PCは横長版） -->
+<link rel="preload" as="image" href="images/hero-mobile.jpg" media="(max-width: 768px)" fetchpriority="high">
+<link rel="preload" as="image" href="images/hero.jpg" media="(min-width: 769px)" fetchpriority="high">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{--cream:#F5F0E8;--cream-light:#FAF7F2;--sage:#8B9E82;--sage-dark:#6B7E62;--sage-light:#A8B8A0;--charcoal:#2C2C2C;--warm-gray:#6B6560;--gold:#C4A96A;--gold-light:#D4BE8A;--white:#FFFFFF;--text-primary:#2C2C2C;--text-secondary:#6B6560;--border-light:rgba(139,158,130,.2)}
@@ -129,30 +132,35 @@ section{padding:100px 24px}
 
 /* Approach */
 .approach{background:var(--cream-light)}
-.approach__steps{display:flex;flex-direction:column;gap:0;margin-top:48px;position:relative}
-.approach__steps::before{content:'';position:absolute;left:40px;top:40px;bottom:40px;width:1px;background:linear-gradient(to bottom,var(--sage),var(--border-light))}
-.approach__step{display:flex;gap:40px;align-items:flex-start;padding:40px 0;position:relative}
-.approach__step-num{width:80px;height:80px;min-width:80px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--white);background:var(--sage);position:relative;z-index:1;box-shadow:0 4px 16px rgba(139,158,130,.3)}
-.approach__step-content h4{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:400;margin-bottom:8px;letter-spacing:1px}
-.approach__step-content p{font-size:14px;color:var(--text-secondary);line-height:2}
-.approach__step-content .tag{display:inline-block;padding:4px 14px;background:rgba(139,158,130,.12);color:var(--sage-dark);font-size:11px;letter-spacing:1px;border-radius:20px;margin-top:8px}
+.approach__timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:64px;position:relative;align-items:start}
+.approach__timeline::before{content:'';position:absolute;top:36px;left:12.5%;right:12.5%;height:2px;background:linear-gradient(to right,var(--sage) 0%,var(--sage) 70%,var(--gold) 100%);z-index:0}
+.approach__step{text-align:center;position:relative;z-index:1;padding:0 8px}
+.approach__dot{width:72px;height:72px;border-radius:50%;background:var(--white);border:3px solid var(--sage);margin:0 auto 24px;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:500;color:var(--sage-dark);box-shadow:0 6px 20px rgba(139,158,130,.22);transition:all .4s}
+.approach__step:hover .approach__dot{transform:translateY(-3px);box-shadow:0 10px 24px rgba(139,158,130,.3)}
+.approach__step:last-child .approach__dot{border-color:var(--gold);color:var(--gold);box-shadow:0 6px 20px rgba(196,169,106,.22)}
+.approach__step:last-child:hover .approach__dot{box-shadow:0 10px 24px rgba(196,169,106,.3)}
+.approach__step h4{font-family:'Noto Serif JP',serif;font-size:17px;font-weight:500;margin-bottom:12px;color:var(--charcoal);letter-spacing:.5px;line-height:1.5}
+.approach__step p{font-size:13px;color:var(--text-secondary);line-height:1.9;margin-bottom:14px}
+.approach__step .tag{display:inline-block;padding:5px 14px;background:rgba(139,158,130,.14);color:var(--sage-dark);font-size:11px;letter-spacing:1px;border-radius:20px;font-weight:500}
+.approach__step:last-child .tag{background:rgba(196,169,106,.16);color:var(--gold)}
 
 /* Plan */
-.plan{background:var(--cream-light);padding-top:0}
-.plan-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:56px;position:relative}
-.plan-card{background:var(--white);border-radius:12px;padding:40px 28px 32px;border:1px solid var(--border-light);transition:all .4s;display:flex;flex-direction:column;align-items:center;text-align:center;position:relative}
-.plan-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.08)}
-.plan-card__step{font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:3px;color:var(--sage-dark);margin-bottom:20px;font-weight:500}
-.plan-card__icon{width:72px;height:72px;border-radius:50%;background:rgba(139,158,130,.14);color:var(--sage-dark);display:flex;align-items:center;justify-content:center;margin-bottom:24px}
-.plan-card__icon svg{width:32px;height:32px}
-.plan-card__title{font-family:'Noto Serif JP',serif;font-size:22px;font-weight:500;color:var(--charcoal);margin-bottom:14px;line-height:1.4}
-.plan-card__period{display:inline-block;padding:6px 18px;background:rgba(139,158,130,.14);color:var(--sage-dark);font-size:12px;letter-spacing:1.5px;border-radius:20px;margin-bottom:16px;font-weight:500}
-.plan-card__freq{font-size:14px;color:var(--charcoal);font-weight:500;letter-spacing:.5px;margin-bottom:20px}
-.plan-card__desc{font-size:13px;color:var(--text-secondary);line-height:1.9;text-align:left;width:100%}
-.plan-card:not(:last-child)::after{content:'';position:absolute;top:54px;right:-22px;width:14px;height:14px;border-top:2px solid var(--sage);border-right:2px solid var(--sage);transform:rotate(45deg);z-index:2}
-.plan-card:last-child .plan-card__step{color:var(--gold)}
-.plan-card:last-child .plan-card__icon{background:rgba(196,169,106,.16);color:var(--gold)}
-.plan-card:last-child .plan-card__period{background:rgba(196,169,106,.16);color:var(--gold)}
+.menu{background:var(--cream-light)}
+.menu__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:48px}
+.menu-card{background:var(--white);border-radius:12px;overflow:hidden;border:1px solid var(--border-light);transition:all .4s}
+.menu-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.08)}
+.menu-card__img{width:100%;aspect-ratio:4/3;height:auto;overflow:hidden;position:relative}
+.menu-card__img>*,.menu-card__img img,.menu-card__img .swap-img,.menu-card__img-placeholder{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.menu-card__img-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;font-size:11px;color:var(--white);letter-spacing:1px;border:2px dashed rgba(255,255,255,.35)}
+.menu-card__img-placeholder .ph-label{font-size:12px;font-weight:500;letter-spacing:1.5px}
+.menu-card__img-placeholder .ph-file{font-size:9px;background:rgba(255,255,255,.18);color:rgba(255,255,255,.95);padding:2px 8px;border-radius:10px}
+.menu-card__img-placeholder .ph-size{font-size:9px;opacity:.7;background:rgba(255,255,255,.12);padding:2px 8px;border-radius:10px}
+.menu-card:nth-child(1) .menu-card__img-placeholder{background:linear-gradient(135deg,#7a8a7a,#8e9e8a)}
+.menu-card:nth-child(2) .menu-card__img-placeholder{background:linear-gradient(135deg,#8a7e6a,#9e8e7c)}
+.menu-card:nth-child(3) .menu-card__img-placeholder{background:linear-gradient(135deg,#6a7a8a,#7c8e9e)}
+.menu-card:nth-child(4) .menu-card__img-placeholder{background:linear-gradient(135deg,#8a8a7a,#9e9e8a)}
+.menu-card__body{padding:24px 20px 28px;text-align:center}
+.menu-card__title{font-family:'Noto Serif JP',serif;font-size:20px;font-weight:500;color:var(--charcoal);letter-spacing:1.5px;line-height:1.5}
 
 /* Strengths */
 .strengths__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:48px}
@@ -315,13 +323,13 @@ footer .copy{font-size:10px;letter-spacing:1px}
   .gallery__strip{grid-template-columns:1fr 1fr;height:auto;gap:10px}.gallery__item{height:200px}
   .troubles__grid{grid-template-columns:1fr 1fr;gap:12px}
   .concept__points{grid-template-columns:1fr;gap:20px}
-  .approach__step{flex-direction:column;align-items:center;text-align:center;gap:20px}.approach__steps::before{display:none}.approach__step-num{width:60px;height:60px;font-size:22px}
+  .approach__timeline{grid-template-columns:1fr;gap:48px;margin-top:48px}.approach__timeline::before{top:36px;bottom:36px;left:50%;right:auto;width:2px;height:auto;background:linear-gradient(to bottom,var(--sage) 0%,var(--sage) 70%,var(--gold) 100%)}.approach__step{max-width:380px;margin:0 auto;padding:0}
   .strengths__grid{grid-template-columns:1fr;gap:20px}
   .voices__grid{grid-template-columns:1fr}
   .pricing__cards{grid-template-columns:1fr}
   .supervisors__grid,.stores__grid{grid-template-columns:1fr}
   .ai-card{grid-template-columns:1fr}.ai-card__visual{max-height:240px}
-  .plan-cards{grid-template-columns:1fr;gap:44px}.plan-card{padding:32px 24px}.plan-card:not(:last-child)::after{top:auto;bottom:-30px;right:50%;transform:translateX(50%) rotate(135deg)}
+  .menu__grid{grid-template-columns:1fr 1fr;gap:12px}.menu-card__body{padding:16px 10px 18px}.menu-card__title{font-size:15px;letter-spacing:1px}
   .hero__ctas{flex-direction:column;align-items:center}.btn-primary,.btn-secondary{width:100%;max-width:300px;justify-content:center}
   .sv2__ctas{grid-template-columns:1fr}.sv2__map{height:160px}
 }
@@ -380,6 +388,12 @@ footer .copy{font-size:10px;letter-spacing:1px}
   ║   □ images/trouble-insomnia.jpg              400×300             ║
   ║   □ images/trouble-medicine.jpg              400×300             ║
   ║   □ images/trouble-fatigue.jpg               400×300             ║
+  ║                                                                  ║
+  ║  ◆ 施術メニュー（4枚）                                          ║
+  ║   □ images/menu-autonomic.jpg (自律神経整体)  600×450             ║
+  ║   □ images/menu-skeletal.jpg  (全身骨格調整)  600×450             ║
+  ║   □ images/menu-chronic.jpg   (慢性痛特化)    600×450             ║
+  ║   □ images/menu-stretch.jpg   (全身ストレッチ)600×450             ║
   ║                                                                  ║
   ║  ◆ 選ばれる理由（4枚）                                          ║
   ║   □ images/strength-01.jpg  (担当制)         400×280             ║
@@ -455,7 +469,7 @@ footer .copy{font-size:10px;letter-spacing:1px}
   <div class="hero__bg">
     <picture>
       <source media="(max-width: 768px)" srcset="images/hero-mobile.jpg">
-      <img src="images/hero.jpg" alt="YURUMU ファーストビュー" class="swap-img" onerror="this.style.display='none';document.getElementById('hero-bg-ph').style.display='flex'">
+      <img src="images/hero.jpg" alt="YURUMU ファーストビュー" class="swap-img" fetchpriority="high" decoding="async" onerror="this.style.display='none';document.getElementById('hero-bg-ph').style.display='flex'">
     </picture>
     <div class="hero__bg-placeholder" id="hero-bg-ph" style="display:none">
       <span class="ph-icon">📷</span>
@@ -571,45 +585,55 @@ footer .copy{font-size:10px;letter-spacing:1px}
       <h2 class="section-title reveal">根本改善への4ステップ</h2>
       <p class="section-desc center reveal">週1〜10日に1回のペースで、3〜4ヶ月かけて<br>段階的に根本改善を目指します。</p>
     </div>
-    <div class="approach__steps">
-      <div class="approach__step reveal"><div class="approach__step-num">01</div><div class="approach__step-content"><h4>AI検査 &amp; カウンセリング</h4><p>AI姿勢検査で身体の状態を精密に数値化。痛みの根本原因を特定し、改善までのロードマップをご説明します。</p><span class="tag">初回 約60分</span></div></div>
-      <div class="approach__step reveal"><div class="approach__step-num">02</div><div class="approach__step-content"><h4>集中改善期（1〜2ヶ月目）</h4><p>週1回の通院で、歪みの矯正と自律神経のバランス調整を集中的に行います。身体の変化を実感しはじめる時期です。</p><span class="tag">週1回 / 30〜60分</span></div></div>
-      <div class="approach__step reveal"><div class="approach__step-num">03</div><div class="approach__step-content"><h4>安定期（3〜4ヶ月目）</h4><p>改善された状態を定着させる期間。通院間隔を10日〜2週間に広げ、再発しない身体づくりを進めます。</p><span class="tag">10日に1回 / 30分</span></div></div>
-      <div class="approach__step reveal"><div class="approach__step-num">04</div><div class="approach__step-content"><h4>メンテナンス期</h4><p>完治後は月1回のメンテナンス通院で、良い状態をキープ。季節の変わり目や疲労が溜まった際のケアもお任せください。</p><span class="tag">月1回 / 30分</span></div></div>
+    <div class="approach__timeline">
+      <div class="approach__step reveal"><div class="approach__dot">01</div><h4>カウンセリング &amp; 検査</h4><p>身体の状態を精密に把握し、痛みの根本原因と改善までのロードマップをご説明します。</p><span class="tag">初回 約60分</span></div>
+      <div class="approach__step reveal"><div class="approach__dot">02</div><h4>集中改善期<br>（1〜2ヶ月目）</h4><p>週1回の通院で、歪みの矯正と自律神経のバランス調整を集中的に行います。</p><span class="tag">週1回 / 30〜60分</span></div>
+      <div class="approach__step reveal"><div class="approach__dot">03</div><h4>安定期<br>（3〜4ヶ月目）</h4><p>通院間隔を10日〜2週間に広げ、改善した状態を定着させ、再発しない身体づくりを進めます。</p><span class="tag">10日に1回 / 30分</span></div>
+      <div class="approach__step reveal"><div class="approach__dot">04</div><h4>メンテナンス期</h4><p>完治後は月1回の通院で良い状態をキープ。季節の変わり目や疲労時のケアもお任せください。</p><span class="tag">月1回 / 30分</span></div>
     </div>
   </div>
 </section>
 
-<!-- Plan -->
-<section class="plan" id="plan">
+<!-- Menu -->
+<section class="menu" id="menu">
   <div class="section-inner text-center">
-    <div class="section-label reveal">TREATMENT PLAN</div>
-    <h2 class="section-title reveal">通院の流れ</h2>
-    <p class="section-desc center reveal">3つのステップで根本から改善し、<br>再発しない身体へ導きます。</p>
-    <div class="plan-cards">
-      <div class="plan-card reveal">
-        <div class="plan-card__step">STEP 01</div>
-        <div class="plan-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><circle cx="8" cy="15" r="1.2" fill="currentColor"/><circle cx="12" cy="15" r="1.2" fill="currentColor"/><circle cx="16" cy="15" r="1.2" fill="currentColor"/></svg></div>
-        <h3 class="plan-card__title">集中改善期</h3>
-        <div class="plan-card__period">1〜2ヶ月目</div>
-        <div class="plan-card__freq">週1回の通院 / 30〜60分</div>
-        <p class="plan-card__desc">歪みの矯正と自律神経のバランス調整を集中的に行います。身体の変化を実感しはじめる大切な時期です。</p>
+    <div class="section-label reveal">MENU</div>
+    <h2 class="section-title reveal">施術メニュー</h2>
+    <p class="section-desc center reveal">あなたのお悩みに合わせて、<br>最適な施術メニューをご提案します。</p>
+    <!-- ▼ メニュー画像: images/ フォルダに以下の名前でアップロードするだけで自動表示
+         menu-autonomic.jpg / menu-skeletal.jpg / menu-chronic.jpg / menu-stretch.jpg -->
+    <div class="menu__grid">
+      <div class="menu-card reveal">
+        <div class="menu-card__img">
+          <div class="menu-card__img-placeholder" data-image="menu-autonomic.jpg" data-alt="自律神経整体"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label">自律神経整体の写真</span><span class="ph-file">images/menu-autonomic.jpg</span><span class="ph-size">推奨: 600×450px</span></div>
+        </div>
+        <div class="menu-card__body">
+          <h3 class="menu-card__title">自律神経整体</h3>
+        </div>
       </div>
-      <div class="plan-card reveal">
-        <div class="plan-card__step">STEP 02</div>
-        <div class="plan-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
-        <h3 class="plan-card__title">安定期</h3>
-        <div class="plan-card__period">3〜4ヶ月目</div>
-        <div class="plan-card__freq">10日に1回 / 30分</div>
-        <p class="plan-card__desc">改善された状態を定着させる期間。通院間隔を10日〜2週間に広げ、再発しない身体づくりを進めます。</p>
+      <div class="menu-card reveal">
+        <div class="menu-card__img">
+          <div class="menu-card__img-placeholder" data-image="menu-skeletal.jpg" data-alt="全身骨格調整"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label">全身骨格調整の写真</span><span class="ph-file">images/menu-skeletal.jpg</span><span class="ph-size">推奨: 600×450px</span></div>
+        </div>
+        <div class="menu-card__body">
+          <h3 class="menu-card__title">全身骨格調整</h3>
+        </div>
       </div>
-      <div class="plan-card reveal">
-        <div class="plan-card__step">STEP 03</div>
-        <div class="plan-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
-        <h3 class="plan-card__title">メンテナンス期</h3>
-        <div class="plan-card__period">完治後</div>
-        <div class="plan-card__freq">月1回 / 30分</div>
-        <p class="plan-card__desc">月1回のメンテナンス通院で良い状態をキープ。季節の変わり目や疲労が溜まった際のケアもお任せください。</p>
+      <div class="menu-card reveal">
+        <div class="menu-card__img">
+          <div class="menu-card__img-placeholder" data-image="menu-chronic.jpg" data-alt="慢性痛特化メニュー"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label">慢性痛特化メニューの写真</span><span class="ph-file">images/menu-chronic.jpg</span><span class="ph-size">推奨: 600×450px</span></div>
+        </div>
+        <div class="menu-card__body">
+          <h3 class="menu-card__title">慢性痛特化メニュー</h3>
+        </div>
+      </div>
+      <div class="menu-card reveal">
+        <div class="menu-card__img">
+          <div class="menu-card__img-placeholder" data-image="menu-stretch.jpg" data-alt="全身ストレッチ"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label">全身ストレッチの写真</span><span class="ph-file">images/menu-stretch.jpg</span><span class="ph-size">推奨: 600×450px</span></div>
+        </div>
+        <div class="menu-card__body">
+          <h3 class="menu-card__title">全身ストレッチ</h3>
+        </div>
       </div>
     </div>
   </div>
@@ -792,7 +816,7 @@ document.querySelectorAll('.troubles__grid .reveal,.concept__points .reveal,.str
 // ▼ 画像オートローダー: data-image="filename.jpg" を持つプレースホルダーを検出し、
 //   images/<filename> が存在すれば <img> に置き換える。存在しなければプレースホルダーのまま表示。
 //   ユーザー作業: images/ フォルダに正しいファイル名で画像をアップロードするだけ。
-document.querySelectorAll('[data-image]').forEach(ph=>{const fn=ph.dataset.image;const alt=ph.dataset.alt||'';const probe=new Image();probe.onload=()=>{const img=document.createElement('img');img.src='images/'+fn;img.alt=alt;img.className='swap-img';img.loading='lazy';ph.replaceWith(img)};probe.src='images/'+fn});
+document.querySelectorAll('[data-image]').forEach(ph=>{const fn=ph.dataset.image;const alt=ph.dataset.alt||'';const probe=new Image();probe.onload=()=>{const img=document.createElement('img');img.src='images/'+fn;img.alt=alt;img.className='swap-img';img.loading='lazy';img.decoding='async';ph.replaceWith(img)};probe.src='images/'+fn});
 </script>
 </body>
 </html>
