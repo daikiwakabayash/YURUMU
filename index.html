@@ -315,6 +315,17 @@ footer .copy{font-size:10px;letter-spacing:1px}
 .hero__inner,.hero__scroll{display:none}
 .hero__bg-placeholder{display:none!important}
 .hero__bg::after,.hero::before,.hero::after{display:none}
+
+/* ▼ モバイル最適化: 画像のクロップ基準とビューポート単位を整える */
+.hero{min-height:100vh;min-height:100svh}
+.swap-img{object-position:center center}
+.hero__bg img{object-position:center center}
+@media(max-width:480px){
+  .trouble-card__img{height:120px}
+  .gallery__item{height:180px}
+  .supervisor__photo{height:220px}
+  .sv2__hero{height:180px}
+}
 </style>
 </head>
 <body>
