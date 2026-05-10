@@ -285,6 +285,15 @@ footer .copy{font-size:10px;letter-spacing:1px}
 .reveal{opacity:0;transform:translateY(30px);transition:all .8s cubic-bezier(.25,.46,.45,.94)}
 .reveal.visible{opacity:1;transform:translateY(0)}
 
+/* ▼ 画像自動スワップ用 共通スタイル（data-image 属性を持つプレースホルダーが対象） */
+.swap-img{width:100%;height:100%;object-fit:cover;display:block}
+.ph-file{font-family:'Cormorant Garamond',monospace;font-size:10px;letter-spacing:1px;background:rgba(0,0,0,.28);color:rgba(255,255,255,.92);padding:3px 10px;border-radius:10px;font-weight:400;display:inline-block}
+.gallery__placeholder .ph-file{background:rgba(139,158,130,.18);color:var(--sage-dark)}
+.ai-card__visual .ph-file{background:rgba(127,219,202,.18);color:rgba(127,219,202,.95)}
+.hero__bg-placeholder{position:absolute;bottom:120px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:10px;padding:9px 18px;border:1px dashed rgba(245,240,232,.32);background:rgba(0,0,0,.32);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:24px;font-size:10px;color:rgba(245,240,232,.7);letter-spacing:1.5px;pointer-events:none;z-index:3;opacity:0;animation:fadeUp .8s 1.5s forwards}
+.hero__bg-placeholder .ph-file{font-size:10px;background:rgba(245,240,232,.12);color:rgba(245,240,232,.95);padding:3px 10px;border-radius:10px;letter-spacing:1px}
+.hero__bg-placeholder .ph-icon{font-size:13px;opacity:.85}
+@media(max-width:768px){.hero__bg-placeholder{bottom:90px;font-size:9px;padding:7px 14px;gap:8px}.hero__bg-placeholder .ph-file{font-size:9px;padding:2px 8px}}
 @media(max-width:768px){
   .store-bar{padding:0 12px;height:48px}.store-bar__logo{font-size:14px;letter-spacing:2px}.store-tab{padding:4px 12px;font-size:10px}.store-bar__cta{padding:6px 16px;font-size:10px}
   section{padding:72px 20px}
@@ -307,29 +316,58 @@ footer .copy{font-size:10px;letter-spacing:1px}
 
 <!--
   ╔══════════════════════════════════════════════════════════════════╗
-  ║  📸 画像の埋め込みガイド                                        ║
+  ║  📸 画像の差し込み方（とても簡単です！）                        ║
   ╠══════════════════════════════════════════════════════════════════╣
   ║                                                                  ║
-  ║  1. images/ フォルダを作成し、画像ファイルを配置してください       ║
-  ║  2. 各セクションの「▼ 画像の埋め込み方」コメントを参照           ║
-  ║  3. プレースホルダー (<div class="...-placeholder">) を             ║
-  ║     <img src="images/ファイル名.jpg" alt="説明"> に置き換え       ║
+  ║  ★ 作業はこれだけ ★                                            ║
+  ║  下のファイル名で images/ フォルダにアップロードするだけ。      ║
+  ║  HTMLの編集は一切不要。アップロードした瞬間に自動で表示されます。║
+  ║  画像が無い箇所には「ファイル名のヒント」が表示されています。    ║
   ║                                                                  ║
-  ║  【画像一覧（推奨サイズ）】                                      ║
-  ║  Hero:     images/hero.jpg (1920×1080) ※ファーストビュー背景   ║
-  ║  Gallery:  images/interior-1.jpg (800×400),                      ║
-  ║           images/interior-2.jpg (400×400)                        ║
-  ║           images/interior-3.jpg (400×400),                       ║
-  ║           images/interior-4.jpg (800×400)                        ║
-  ║  Troubles: trouble-headache.jpg, trouble-insomnia.jpg,           ║
-  ║           trouble-medicine.jpg, trouble-fatigue.jpg (各400×300)  ║
-  ║  Strengths: strength-01〜06.jpg (各400×280)                      ║
-  ║  Supervisors: tano.jpg, wakabayashi.jpg (各500×360)              ║
-  ║  AI: ai-posture.jpg (500×500)                                    ║
-  ║  Stores: store-ikebukuro.jpg, store-kamata.jpg (各600×300)       ║
+  ║  【ファイル一覧チェックリスト（合計20枚）】                     ║
   ║                                                                  ║
-  ║  ※ 画像はJPG/PNG/WebP対応。WebP推奨（軽量＋高画質）            ║
-  ║  ※ object-fit: cover で表示されるため、少し大きめが◎            ║
+  ║  ◆ ファーストビュー（最も大きく表示・最優先）                   ║
+  ║   □ images/hero.jpg                          1920×1080以上推奨   ║
+  ║                                                                  ║
+  ║  ◆ ギャラリー（内装写真・既に配置済み）                         ║
+  ║   ✓ images/interior-1.jpg                    800×400             ║
+  ║   ✓ images/interior-2.jpg                    400×400             ║
+  ║   ✓ images/interior-3.jpg                    400×400             ║
+  ║   ✓ images/interior-4.jpg                    800×400             ║
+  ║                                                                  ║
+  ║  ◆ お悩み（4枚）                                                ║
+  ║   □ images/trouble-headache.jpg              400×300             ║
+  ║   □ images/trouble-insomnia.jpg              400×300             ║
+  ║   □ images/trouble-medicine.jpg              400×300             ║
+  ║   □ images/trouble-fatigue.jpg               400×300             ║
+  ║                                                                  ║
+  ║  ◆ 選ばれる理由（6枚）                                          ║
+  ║   □ images/strength-01.jpg  (担当制)         400×280             ║
+  ║   □ images/strength-02.jpg  (技術力)         400×280             ║
+  ║   □ images/strength-03.jpg  (AI検査)         400×280             ║
+  ║   □ images/strength-04.jpg  (NAORU)          400×280             ║
+  ║   □ images/strength-05.jpg  (根本施術)       400×280             ║
+  ║   □ images/strength-06.jpg  (土日営業)       400×280             ║
+  ║                                                                  ║
+  ║  ◆ 監修者（2枚）                                                ║
+  ║   □ images/tano.jpg          (田野先生)       500×360             ║
+  ║   □ images/wakabayashi.jpg   (若林)           500×360             ║
+  ║                                                                  ║
+  ║  ◆ AI姿勢分析（1枚）                                            ║
+  ║   □ images/ai-posture.jpg                    500×500             ║
+  ║                                                                  ║
+  ║  ◆ 店舗（2枚）                                                  ║
+  ║   □ images/store-ikebukuro.jpg               600×300             ║
+  ║   □ images/store-kamata.jpg                  600×300             ║
+  ║                                                                  ║
+  ║  ※ JPG / PNG / WebP に対応。WebP推奨（軽量＋高画質）           ║
+  ║  ※ object-fit:cover で表示されるため、推奨サイズより大きめでもOK║
+  ║  ※ 画像名の先頭/末尾は厳密に上のとおりにしてください            ║
+  ║                                                                  ║
+  ║  【しくみ（参考）】                                             ║
+  ║  プレースホルダー側に data-image="ファイル名" が設定されており、 ║
+  ║  ページ読み込み時にJSが画像の存在を確認 → あれば自動で<img>に  ║
+  ║  置換 → 無ければプレースホルダーをそのまま表示                  ║
   ╚══════════════════════════════════════════════════════════════════╝
 
   ╔══════════════════════════════════════════════════════════════════╗
@@ -378,13 +416,19 @@ footer .copy{font-size:10px;letter-spacing:1px}
   <a href="#stores" class="store-bar__cta">ご予約はこちら</a>
 </nav>
 
-<!-- ▼ ファーストビュー背景画像の埋め込み方:
-     1. images/hero.jpg として画像ファイルを配置するだけで表示されます
-     2. 推奨サイズ: 1920×1080px 以上（横長・JPG/WebP推奨）
-     3. 画像がない場合は暗色グラデーション背景が表示されます（シネマティック演出） -->
+<!-- ▼ ファーストビュー背景画像（最も大きく表示される画像）:
+     images/hero.jpg として画像ファイルを配置するだけで自動表示されます
+     推奨サイズ: 1920×1080px 以上（横長・JPG/WebP推奨）
+     画像がない間は暗色グラデーション + 配置ヒントが表示されます -->
 <section class="hero" id="top">
   <div class="hero__bg">
-    <img src="images/hero.jpg" alt="YURUMU ファーストビュー">
+    <img src="images/hero.jpg" alt="YURUMU ファーストビュー" class="swap-img" onerror="this.style.display='none';document.getElementById('hero-bg-ph').style.display='flex'">
+    <div class="hero__bg-placeholder" id="hero-bg-ph" style="display:none">
+      <span class="ph-icon">📷</span>
+      <span>ヒーロー背景画像</span>
+      <span class="ph-file">images/hero.jpg</span>
+      <span>推奨 1920×1080</span>
+    </div>
   </div>
   <div class="hero__inner">
     <div class="hero__badge">頭痛・自律神経ケア専門院</div>
@@ -405,8 +449,7 @@ footer .copy{font-size:10px;letter-spacing:1px}
   <div class="gallery__inner">
     <div class="gallery__label reveal">INTERIOR</div>
     <div class="gallery__strip reveal">
-      <!-- ▼ 画像の埋め込み方: <div class="gallery__placeholder">...</div> を削除して、以下の形式で画像を設置 -->
-      <!-- <img src="images/ファイル名.jpg" alt="説明" class="gallery__img"> -->
+      <!-- ▼ ギャラリー画像: images/interior-1.jpg 〜 interior-4.jpg を差し替えるだけ（既に配置済み） -->
       <div class="gallery__item">
         <img src="images/interior-1.jpg" alt="受付・待合スペース" class="gallery__img">
       </div>
@@ -429,12 +472,12 @@ footer .copy{font-size:10px;letter-spacing:1px}
     <div class="section-label reveal">TROUBLES</div>
     <h2 class="section-title reveal">こんなお悩み、<br>ありませんか？</h2>
     <p class="section-desc center reveal">一つでも当てはまる方は、<br>根本からの改善が必要かもしれません。</p>
-    <!-- ▼ 画像の埋め込み方: <div class="trouble-card__img-placeholder">...</div> を削除して、以下の形式で画像を設置 -->
-    <!-- <img src="images/ファイル名.jpg" alt="説明"> -->
+    <!-- ▼ お悩み画像: images/ フォルダに以下の名前でアップロードするだけで自動表示
+         trouble-headache.jpg / trouble-insomnia.jpg / trouble-medicine.jpg / trouble-fatigue.jpg -->
     <div class="troubles__grid">
       <div class="trouble-card reveal">
         <div class="trouble-card__img">
-          <div class="trouble-card__img-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label">頭痛イメージ写真</span><span class="ph-size">推奨: 400×300px</span></div>
+          <div class="trouble-card__img-placeholder" data-image="trouble-headache.jpg" data-alt="慢性頭痛のイメージ"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label">頭痛イメージ写真</span><span class="ph-file">images/trouble-headache.jpg</span><span class="ph-size">推奨: 400×300px</span></div>
         </div>
         <div class="trouble-card__body">
           <div class="trouble-card__title">慢性的な頭痛に<br>悩まされている</div>
@@ -443,7 +486,7 @@ footer .copy{font-size:10px;letter-spacing:1px}
       </div>
       <div class="trouble-card reveal">
         <div class="trouble-card__img">
-          <div class="trouble-card__img-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label">不眠イメージ写真</span><span class="ph-size">推奨: 400×300px</span></div>
+          <div class="trouble-card__img-placeholder" data-image="trouble-insomnia.jpg" data-alt="不眠のイメージ"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label">不眠イメージ写真</span><span class="ph-file">images/trouble-insomnia.jpg</span><span class="ph-size">推奨: 400×300px</span></div>
         </div>
         <div class="trouble-card__body">
           <div class="trouble-card__title">眠れない・<br>朝起きられない</div>
@@ -452,7 +495,7 @@ footer .copy{font-size:10px;letter-spacing:1px}
       </div>
       <div class="trouble-card reveal">
         <div class="trouble-card__img">
-          <div class="trouble-card__img-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label">薬依存イメージ写真</span><span class="ph-size">推奨: 400×300px</span></div>
+          <div class="trouble-card__img-placeholder" data-image="trouble-medicine.jpg" data-alt="薬依存からの脱却イメージ"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label">薬依存イメージ写真</span><span class="ph-file">images/trouble-medicine.jpg</span><span class="ph-size">推奨: 400×300px</span></div>
         </div>
         <div class="trouble-card__body">
           <div class="trouble-card__title">薬に頼り続ける<br>生活を変えたい</div>
@@ -461,7 +504,7 @@ footer .copy{font-size:10px;letter-spacing:1px}
       </div>
       <div class="trouble-card reveal">
         <div class="trouble-card__img">
-          <div class="trouble-card__img-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label">肩こり・倦怠感イメージ写真</span><span class="ph-size">推奨: 400×300px</span></div>
+          <div class="trouble-card__img-placeholder" data-image="trouble-fatigue.jpg" data-alt="肩こり・倦怠感のイメージ"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label">肩こり・倦怠感イメージ写真</span><span class="ph-file">images/trouble-fatigue.jpg</span><span class="ph-size">推奨: 400×300px</span></div>
         </div>
         <div class="trouble-card__body">
           <div class="trouble-card__title">めまい・肩こり・<br>倦怠感がつらい</div>
@@ -492,9 +535,8 @@ footer .copy{font-size:10px;letter-spacing:1px}
     <div class="section-label reveal">AI TECHNOLOGY</div>
     <h2 class="section-title reveal" style="color:var(--cream)">AI姿勢検査で、<br>見えない原因を可視化する。</h2>
     <div class="ai-card reveal">
-      <!-- ▼ 画像の埋め込み方: <div class="ai-ph">...</div> を削除して、以下の形式で画像を設置 -->
-      <!-- <img src="images/ai-posture.jpg" alt="AI姿勢分析" style="width:100%;height:100%;object-fit:cover;border-radius:8px"> -->
-      <div class="ai-card__visual"><div class="ai-ph"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(127,219,202,.7)" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label">AI姿勢分析の画面写真</span><span class="ph-size">推奨: 500×500px</span></div></div>
+      <!-- ▼ AI姿勢分析画像: images/ai-posture.jpg をアップロードするだけで自動表示 -->
+      <div class="ai-card__visual"><div class="ai-ph" data-image="ai-posture.jpg" data-alt="AI姿勢分析"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(127,219,202,.7)" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label">AI姿勢分析の画面写真</span><span class="ph-file">images/ai-posture.jpg</span><span class="ph-size">推奨: 500×500px</span></div></div>
       <div class="ai-card__text">
         <h3>最先端のAI姿勢分析を導入</h3>
         <p>あなたの姿勢や身体の動きをAIが精密に解析。目視では捉えきれない微細な歪みやバランスの乱れを数値化し、根本原因を明確にします。</p>
@@ -546,31 +588,30 @@ footer .copy{font-size:10px;letter-spacing:1px}
     <div class="section-label reveal">STRENGTHS</div>
     <h2 class="section-title reveal">YURUMUが選ばれる理由</h2>
     <p class="section-desc center reveal">技術力・体制・環境、すべてにこだわり抜いた<br>頭痛・自律神経ケア専門院です。</p>
-    <!-- ▼ 画像の埋め込み方: <div class="str-card__img-placeholder">...</div> を削除して、以下の形式で画像を設置 -->
-    <!-- <img src="images/ファイル名.jpg" alt="説明"> -->
+    <!-- ▼ 強み画像: images/strength-01.jpg 〜 strength-06.jpg をアップロードするだけで自動表示 -->
     <div class="strengths__grid">
       <div class="str-card reveal">
-        <div class="str-card__img"><div class="str-card__img-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label">担当制の写真</span><span class="ph-size">推奨: 400×280px</span></div></div>
+        <div class="str-card__img"><div class="str-card__img-placeholder" data-image="strength-01.jpg" data-alt="完全担当制"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label">担当制の写真</span><span class="ph-file">images/strength-01.jpg</span><span class="ph-size">推奨: 400×280px</span></div></div>
         <div class="str-card__body"><div class="str-card__num">01</div><h4>完全担当制</h4><p>初回から卒業まで同じ先生が担当。毎回の変化を把握し、最適な施術を提供します。</p></div>
       </div>
       <div class="str-card reveal">
-        <div class="str-card__img"><div class="str-card__img-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label">技術力の写真</span><span class="ph-size">推奨: 400×280px</span></div></div>
+        <div class="str-card__img"><div class="str-card__img-placeholder" data-image="strength-02.jpg" data-alt="高い技術力"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label">技術力の写真</span><span class="ph-file">images/strength-02.jpg</span><span class="ph-size">推奨: 400×280px</span></div></div>
         <div class="str-card__body"><div class="str-card__num">02</div><h4>PLT協会監修の高い技術力</h4><p>田野先生の技術監修のもと、頭痛・自律神経に特化した高度な施術プロトコルを提供します。</p></div>
       </div>
       <div class="str-card reveal">
-        <div class="str-card__img"><div class="str-card__img-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label">AI検査の写真</span><span class="ph-size">推奨: 400×280px</span></div></div>
+        <div class="str-card__img"><div class="str-card__img-placeholder" data-image="strength-03.jpg" data-alt="AI姿勢検査"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label">AI検査の写真</span><span class="ph-file">images/strength-03.jpg</span><span class="ph-size">推奨: 400×280px</span></div></div>
         <div class="str-card__body"><div class="str-card__num">03</div><h4>AI姿勢検査で原因を可視化</h4><p>最先端のAI技術で姿勢と動きを精密に分析。データに基づいた確実な施術を行います。</p></div>
       </div>
       <div class="str-card reveal">
-        <div class="str-card__img"><div class="str-card__img-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label">NAORU展開の写真</span><span class="ph-size">推奨: 400×280px</span></div></div>
+        <div class="str-card__img"><div class="str-card__img-placeholder" data-image="strength-04.jpg" data-alt="NAORU整体展開サポート"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label">NAORU展開の写真</span><span class="ph-file">images/strength-04.jpg</span><span class="ph-size">推奨: 400×280px</span></div></div>
         <div class="str-card__body"><div class="str-card__num">04</div><h4>NAORU整体の展開サポート</h4><p>全国にNAORU整体を展開する若林のノウハウと実績をもとに、運営・集客・システムを全面サポート。</p></div>
       </div>
       <div class="str-card reveal">
-        <div class="str-card__img"><div class="str-card__img-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label">根本施術の写真</span><span class="ph-size">推奨: 400×280px</span></div></div>
+        <div class="str-card__img"><div class="str-card__img-placeholder" data-image="strength-05.jpg" data-alt="根本施術"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label">根本施術の写真</span><span class="ph-file">images/strength-05.jpg</span><span class="ph-size">推奨: 400×280px</span></div></div>
         <div class="str-card__body"><div class="str-card__num">05</div><h4>根本施術へのこだわり</h4><p>痛みの原因を根本から改善。一時しのぎではない、再発しない身体づくりを目指します。</p></div>
       </div>
       <div class="str-card reveal">
-        <div class="str-card__img"><div class="str-card__img-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label">土日営業の写真</span><span class="ph-size">推奨: 400×280px</span></div></div>
+        <div class="str-card__img"><div class="str-card__img-placeholder" data-image="strength-06.jpg" data-alt="土日営業"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label">土日営業の写真</span><span class="ph-file">images/strength-06.jpg</span><span class="ph-size">推奨: 400×280px</span></div></div>
         <div class="str-card__body"><div class="str-card__num">06</div><h4>土日も営業で通いやすい</h4><p>お仕事で忙しい方でも無理なく通院できるよう、土日も営業しています。</p></div>
       </div>
     </div>
@@ -583,12 +624,11 @@ footer .copy{font-size:10px;letter-spacing:1px}
     <div class="section-label reveal">SUPERVISORS</div>
     <h2 class="section-title reveal">監修・サポート体制</h2>
     <p class="section-desc center reveal">業界トップクラスの技術力と経営力が融合。<br>本当に質の高いサービスを本格的に展開します。</p>
-    <!-- ▼ 画像の埋め込み方: <div class="supervisor__photo-placeholder">...</div> を削除して、以下の形式で画像を設置 -->
-    <!-- <img src="images/tano.jpg" alt="田野先生"> -->
+    <!-- ▼ 監修者画像: images/tano.jpg / images/wakabayashi.jpg をアップロードするだけで自動表示 -->
     <div class="supervisors__grid">
       <div class="supervisor-card reveal">
         <div class="supervisor__photo">
-          <div class="supervisor__photo-placeholder"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg><span class="ph-label">田野先生の写真</span><span class="ph-size">推奨: 500×360px</span></div>
+          <div class="supervisor__photo-placeholder" data-image="tano.jpg" data-alt="田野先生"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg><span class="ph-label">田野先生の写真</span><span class="ph-file">images/tano.jpg</span><span class="ph-size">推奨: 500×360px</span></div>
         </div>
         <div class="supervisor__info">
           <div class="supervisor__role">技術監修</div>
@@ -599,7 +639,7 @@ footer .copy{font-size:10px;letter-spacing:1px}
       </div>
       <div class="supervisor-card reveal">
         <div class="supervisor__photo">
-          <div class="supervisor__photo-placeholder"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg><span class="ph-label">若林の写真</span><span class="ph-size">推奨: 500×360px</span></div>
+          <div class="supervisor__photo-placeholder" data-image="wakabayashi.jpg" data-alt="若林"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg><span class="ph-label">若林の写真</span><span class="ph-file">images/wakabayashi.jpg</span><span class="ph-size">推奨: 500×360px</span></div>
         </div>
         <div class="supervisor__info">
           <div class="supervisor__role">展開サポート</div>
@@ -660,12 +700,11 @@ footer .copy{font-size:10px;letter-spacing:1px}
     <h2 class="section-title reveal" style="color:var(--cream)">店舗情報・ご予約</h2>
     <p class="section-desc center reveal" style="color:rgba(245,240,232,.5)">お近くの店舗をお選びください。</p>
     <div class="stores__grid">
-      <!-- ▼ 画像の埋め込み方: <div class="sv2__hero-ph">...</div> を削除して、以下の形式で画像を設置 -->
-      <!-- <img src="images/store-ikebukuro.jpg" alt="YURUMU 池袋店"> -->
+      <!-- ▼ 店舗画像: images/store-ikebukuro.jpg をアップロードするだけで自動表示 -->
       <!-- 池袋 -->
       <div class="sv2 reveal" id="store-ikebukuro">
         <div class="sv2__hero">
-          <div class="sv2__hero-ph"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label">池袋店の外観・内装写真</span><span class="ph-size">推奨: 600×300px</span></div>
+          <div class="sv2__hero-ph" data-image="store-ikebukuro.jpg" data-alt="YURUMU 池袋店"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label">池袋店の外観・内装写真</span><span class="ph-file">images/store-ikebukuro.jpg</span><span class="ph-size">推奨: 600×300px</span></div>
           <div class="sv2__badge open">OPEN</div>
         </div>
         <div class="sv2__body">
@@ -689,12 +728,11 @@ footer .copy{font-size:10px;letter-spacing:1px}
           </div>
         </div>
       </div>
-      <!-- ▼ 画像の埋め込み方: <div class="sv2__hero-ph">...</div> を削除して、以下の形式で画像を設置 -->
-      <!-- <img src="images/store-kamata.jpg" alt="YURUMU 蒲田店"> -->
+      <!-- ▼ 店舗画像: images/store-kamata.jpg をアップロードするだけで自動表示 -->
       <!-- 蒲田 -->
       <div class="sv2 reveal" id="store-kamata">
         <div class="sv2__hero">
-          <div class="sv2__hero-ph"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label">蒲田店の外観・内装写真</span><span class="ph-size">推奨: 600×300px</span></div>
+          <div class="sv2__hero-ph" data-image="store-kamata.jpg" data-alt="YURUMU 蒲田店"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label">蒲田店の外観・内装写真</span><span class="ph-file">images/store-kamata.jpg</span><span class="ph-size">推奨: 600×300px</span></div>
           <div class="sv2__badge soon">COMING SOON</div>
         </div>
         <div class="sv2__body">
@@ -760,7 +798,10 @@ document.querySelectorAll('.faq__item').forEach(item=>{item.addEventListener('cl
 const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 document.querySelectorAll('.troubles__grid .reveal,.concept__points .reveal,.strengths__grid .reveal,.voices__grid .reveal').forEach((el,i)=>{el.style.transitionDelay=(i*.1)+'s'});
-const heroBg=document.querySelector('.hero__bg img');if(heroBg){heroBg.addEventListener('error',()=>{heroBg.parentElement.remove()})}
+// ▼ 画像オートローダー: data-image="filename.jpg" を持つプレースホルダーを検出し、
+//   images/<filename> が存在すれば <img> に置き換える。存在しなければプレースホルダーのまま表示。
+//   ユーザー作業: images/ フォルダに正しいファイル名で画像をアップロードするだけ。
+document.querySelectorAll('[data-image]').forEach(ph=>{const fn=ph.dataset.image;const alt=ph.dataset.alt||'';const probe=new Image();probe.onload=()=>{const img=document.createElement('img');img.src='images/'+fn;img.alt=alt;img.className='swap-img';img.loading='lazy';ph.replaceWith(img)};probe.src='images/'+fn});
 </script>
 </body>
 </html>
