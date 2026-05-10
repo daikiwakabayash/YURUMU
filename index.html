@@ -311,15 +311,18 @@ footer .copy{font-size:10px;letter-spacing:1px}
   .sv2__ctas{grid-template-columns:1fr}.sv2__map{height:160px}
 }
 
-/* ▼ ファーストビュー: 画像のみ表示モード（テキスト・装飾オーバーレイは全て非表示） */
+/* ▼ ファーストビュー: 画像を切らずに自然な縦横比で全幅表示
+   （テキスト・装飾オーバーレイは全て非表示。ヒーロー高さは画像のアスペクト比で決まる） */
+.hero{min-height:auto;padding:52px 0 0;display:block;background:#1a1e1b}
 .hero__inner,.hero__scroll{display:none}
 .hero__bg-placeholder{display:none!important}
-.hero__bg::after,.hero::before,.hero::after{display:none}
+.hero::before,.hero::after,.hero__bg::after{display:none}
+.hero__bg{position:relative;inset:auto}
+.hero__bg img,.hero__bg .swap-img{width:100%;height:auto;object-fit:unset;max-width:none;display:block;object-position:initial}
+@media(max-width:768px){.hero{padding-top:48px}}
 
-/* ▼ モバイル最適化: 画像のクロップ基準とビューポート単位を整える */
-.hero{min-height:100vh;min-height:100svh}
+/* ▼ 他セクション画像のクロップ基準（モバイル含む） */
 .swap-img{object-position:center center}
-.hero__bg img{object-position:center center}
 @media(max-width:480px){
   .trouble-card__img{height:120px}
   .gallery__item{height:180px}
