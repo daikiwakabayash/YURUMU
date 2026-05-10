@@ -311,10 +311,24 @@ footer .copy{font-size:10px;letter-spacing:1px}
   .sv2__ctas{grid-template-columns:1fr}.sv2__map{height:160px}
 }
 
-/* ▼ ファーストビュー: 画像のみ表示モード（テキスト・装飾オーバーレイは全て非表示） */
+/* ▼ ファーストビュー: 画像を切らずに自然な縦横比で全幅表示
+   （テキスト・装飾オーバーレイは全て非表示。ヒーロー高さは画像のアスペクト比で決まる） */
+.hero{min-height:auto;padding:52px 0 0;display:block;background:#1a1e1b}
 .hero__inner,.hero__scroll{display:none}
 .hero__bg-placeholder{display:none!important}
-.hero__bg::after,.hero::before,.hero::after{display:none}
+.hero::before,.hero::after,.hero__bg::after{display:none}
+.hero__bg{position:relative;inset:auto}
+.hero__bg img,.hero__bg .swap-img{width:100%;height:auto;object-fit:unset;max-width:none;display:block;object-position:initial}
+@media(max-width:768px){.hero{padding-top:48px}}
+
+/* ▼ 他セクション画像のクロップ基準（モバイル含む） */
+.swap-img{object-position:center center}
+@media(max-width:480px){
+  .trouble-card__img{height:120px}
+  .gallery__item{height:180px}
+  .supervisor__photo{height:220px}
+  .sv2__hero{height:180px}
+}
 </style>
 </head>
 <body>
@@ -332,7 +346,7 @@ footer .copy{font-size:10px;letter-spacing:1px}
   ║  【ファイル一覧チェックリスト（合計20枚）】                     ║
   ║                                                                  ║
   ║  ◆ ファーストビュー（最も大きく表示・最優先）                   ║
-  ║   □ images/hero.jpg                          1920×1080以上推奨   ║
+  ║   □ images/hero-v2.jpg                       1920×1080以上推奨   ║
   ║                                                                  ║
   ║  ◆ ギャラリー（内装写真・既に配置済み）                         ║
   ║   ✓ images/interior-1.jpg                    800×400             ║
@@ -422,16 +436,16 @@ footer .copy{font-size:10px;letter-spacing:1px}
 </nav>
 
 <!-- ▼ ファーストビュー背景画像（最も大きく表示される画像）:
-     images/hero.jpg として画像ファイルを配置するだけで自動表示されます
+     images/hero-v2.jpg として画像ファイルを配置するだけで自動表示されます
      推奨サイズ: 1920×1080px 以上（横長・JPG/WebP推奨）
      画像がない間は暗色グラデーション + 配置ヒントが表示されます -->
 <section class="hero" id="top">
   <div class="hero__bg">
-    <img src="images/hero.jpg" alt="YURUMU ファーストビュー" class="swap-img" onerror="this.style.display='none';document.getElementById('hero-bg-ph').style.display='flex'">
+    <img src="images/hero-v2.jpg" alt="YURUMU ファーストビュー" class="swap-img" onerror="this.style.display='none';document.getElementById('hero-bg-ph').style.display='flex'">
     <div class="hero__bg-placeholder" id="hero-bg-ph" style="display:none">
       <span class="ph-icon">📷</span>
       <span>ヒーロー背景画像</span>
-      <span class="ph-file">images/hero.jpg</span>
+      <span class="ph-file">images/hero-v2.jpg</span>
       <span>推奨 1920×1080</span>
     </div>
   </div>
