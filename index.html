@@ -139,13 +139,20 @@ section{padding:100px 24px}
 
 /* Plan */
 .plan{background:var(--cream-light);padding-top:0}
-.plan__timeline{display:flex;justify-content:center;gap:0;margin:48px 0;position:relative}
-.plan__timeline::before{content:'';position:absolute;top:50%;left:10%;right:10%;height:2px;background:linear-gradient(to right,var(--sage),var(--gold));transform:translateY(-50%)}
-.plan__phase{text-align:center;position:relative;z-index:1;flex:1;max-width:220px}
-.plan__phase-dot{width:48px;height:48px;border-radius:50%;background:var(--white);border:3px solid var(--sage);margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--sage-dark)}
-.plan__phase:last-child .plan__phase-dot{border-color:var(--gold);color:var(--gold)}
-.plan__phase h4{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:500;margin-bottom:6px}
-.plan__phase p{font-size:12px;color:var(--text-secondary);line-height:1.7}
+.plan-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:56px;position:relative}
+.plan-card{background:var(--white);border-radius:12px;padding:40px 28px 32px;border:1px solid var(--border-light);transition:all .4s;display:flex;flex-direction:column;align-items:center;text-align:center;position:relative}
+.plan-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.08)}
+.plan-card__step{font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:3px;color:var(--sage-dark);margin-bottom:20px;font-weight:500}
+.plan-card__icon{width:72px;height:72px;border-radius:50%;background:rgba(139,158,130,.14);color:var(--sage-dark);display:flex;align-items:center;justify-content:center;margin-bottom:24px}
+.plan-card__icon svg{width:32px;height:32px}
+.plan-card__title{font-family:'Noto Serif JP',serif;font-size:22px;font-weight:500;color:var(--charcoal);margin-bottom:14px;line-height:1.4}
+.plan-card__period{display:inline-block;padding:6px 18px;background:rgba(139,158,130,.14);color:var(--sage-dark);font-size:12px;letter-spacing:1.5px;border-radius:20px;margin-bottom:16px;font-weight:500}
+.plan-card__freq{font-size:14px;color:var(--charcoal);font-weight:500;letter-spacing:.5px;margin-bottom:20px}
+.plan-card__desc{font-size:13px;color:var(--text-secondary);line-height:1.9;text-align:left;width:100%}
+.plan-card:not(:last-child)::after{content:'';position:absolute;top:54px;right:-22px;width:14px;height:14px;border-top:2px solid var(--sage);border-right:2px solid var(--sage);transform:rotate(45deg);z-index:2}
+.plan-card:last-child .plan-card__step{color:var(--gold)}
+.plan-card:last-child .plan-card__icon{background:rgba(196,169,106,.16);color:var(--gold)}
+.plan-card:last-child .plan-card__period{background:rgba(196,169,106,.16);color:var(--gold)}
 
 /* Strengths */
 .strengths__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:48px}
@@ -230,7 +237,7 @@ section{padding:100px 24px}
 .sv2{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;overflow:hidden;transition:all .4s}
 .sv2:hover{border-color:rgba(255,255,255,.15);box-shadow:0 20px 60px rgba(0,0,0,.3)}
 .sv2__hero{position:relative;width:100%;aspect-ratio:16/9;height:auto;overflow:hidden}
-.sv2__hero>*,.sv2__hero img,.sv2__hero .swap-img,.sv2__hero-ph{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.sv2__hero img,.sv2__hero .swap-img,.sv2__hero-ph{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
 .sv2__hero-ph{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;font-size:12px;color:rgba(255,255,255,.6);letter-spacing:1px;border:2px dashed rgba(255,255,255,.25);transition:all .3s;cursor:default}
 .sv2__hero-ph:hover{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.06)}
 .sv2__hero-ph .ph-label{font-size:13px;font-weight:500;color:rgba(255,255,255,.8);letter-spacing:1.5px}
@@ -314,7 +321,7 @@ footer .copy{font-size:10px;letter-spacing:1px}
   .pricing__cards{grid-template-columns:1fr}
   .supervisors__grid,.stores__grid{grid-template-columns:1fr}
   .ai-card{grid-template-columns:1fr}.ai-card__visual{max-height:240px}
-  .plan__timeline{flex-direction:column;align-items:center;gap:24px}.plan__timeline::before{left:50%;top:0;bottom:0;width:2px;height:auto;right:auto}
+  .plan-cards{grid-template-columns:1fr;gap:44px}.plan-card{padding:32px 24px}.plan-card:not(:last-child)::after{top:auto;bottom:-30px;right:50%;transform:translateX(50%) rotate(135deg)}
   .hero__ctas{flex-direction:column;align-items:center}.btn-primary,.btn-secondary{width:100%;max-width:300px;justify-content:center}
   .sv2__ctas{grid-template-columns:1fr}.sv2__map{height:160px}
 }
@@ -608,10 +615,32 @@ footer .copy{font-size:10px;letter-spacing:1px}
   <div class="section-inner text-center">
     <div class="section-label reveal">TREATMENT PLAN</div>
     <h2 class="section-title reveal">通院の流れ</h2>
-    <div class="plan__timeline reveal">
-      <div class="plan__phase"><div class="plan__phase-dot">1</div><h4>集中改善期</h4><p>1〜2ヶ月目<br>週1回の通院</p></div>
-      <div class="plan__phase"><div class="plan__phase-dot">2</div><h4>安定期</h4><p>3〜4ヶ月目<br>10日に1回</p></div>
-      <div class="plan__phase"><div class="plan__phase-dot">✓</div><h4>メンテナンス</h4><p>完治後<br>月1回の定期ケア</p></div>
+    <p class="section-desc center reveal">3つのステップで根本から改善し、<br>再発しない身体へ導きます。</p>
+    <div class="plan-cards">
+      <div class="plan-card reveal">
+        <div class="plan-card__step">STEP 01</div>
+        <div class="plan-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><circle cx="8" cy="15" r="1.2" fill="currentColor"/><circle cx="12" cy="15" r="1.2" fill="currentColor"/><circle cx="16" cy="15" r="1.2" fill="currentColor"/></svg></div>
+        <h3 class="plan-card__title">集中改善期</h3>
+        <div class="plan-card__period">1〜2ヶ月目</div>
+        <div class="plan-card__freq">週1回の通院 / 30〜60分</div>
+        <p class="plan-card__desc">歪みの矯正と自律神経のバランス調整を集中的に行います。身体の変化を実感しはじめる大切な時期です。</p>
+      </div>
+      <div class="plan-card reveal">
+        <div class="plan-card__step">STEP 02</div>
+        <div class="plan-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
+        <h3 class="plan-card__title">安定期</h3>
+        <div class="plan-card__period">3〜4ヶ月目</div>
+        <div class="plan-card__freq">10日に1回 / 30分</div>
+        <p class="plan-card__desc">改善された状態を定着させる期間。通院間隔を10日〜2週間に広げ、再発しない身体づくりを進めます。</p>
+      </div>
+      <div class="plan-card reveal">
+        <div class="plan-card__step">STEP 03</div>
+        <div class="plan-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+        <h3 class="plan-card__title">メンテナンス期</h3>
+        <div class="plan-card__period">完治後</div>
+        <div class="plan-card__freq">月1回 / 30分</div>
+        <p class="plan-card__desc">月1回のメンテナンス通院で良い状態をキープ。季節の変わり目や疲労が溜まった際のケアもお任せください。</p>
+      </div>
     </div>
   </div>
 </section>
@@ -749,8 +778,8 @@ footer .copy{font-size:10px;letter-spacing:1px}
           <!-- 電話: tel:実際の電話番号 / LINE: https://lin.ee/xxxxx / 予約: https://予約サイトURL -->
           <div class="sv2__ctas">
             <a href="tel:0312345678" class="sc-btn phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>電話予約</a>
-            <a href="https://line.me/R/" target="_blank" class="sc-btn line"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596a.626.626 0 0 1-.199.031c-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595a.62.62 0 0 1 .194-.033c.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>LINE予約</a>
-            <a href="#" class="sc-btn reserve"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>予約はこちら</a>
+            <a href="https://lin.ee/sdDNpl5" target="_blank" rel="noopener" class="sc-btn line"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596a.626.626 0 0 1-.199.031c-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595a.62.62 0 0 1 .194-.033c.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>LINE予約</a>
+            <a href="https://yoberu-git-claude-fix-booking-6aae4d-daikiwakabayashs-projects.vercel.app/book/yurumu-sinnkiyou10" target="_blank" rel="noopener" class="sc-btn reserve"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>予約はこちら</a>
           </div>
         </div>
       </div>
