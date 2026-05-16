@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://daikiwakabayash.github.io/YURUMU/</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://daikiwakabayash.github.io/YURUMU/"/>
+    <image:image>
+      <image:loc>https://daikiwakabayash.github.io/YURUMU/images/hero.jpg</image:loc>
+      <image:title>池袋・蒲田の整体院 YURUMU｜頭痛・自律神経・肩こり専門</image:title>
+      <image:caption>頭痛・自律神経・肩こりの根本施術専門院 YURUMU</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://daikiwakabayash.github.io/YURUMU/images/store-ikebukuro.jpg</image:loc>
+      <image:title>YURUMU 池袋店</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://daikiwakabayash.github.io/YURUMU/images/store-kamata.jpg</image:loc>
+      <image:title>YURUMU 蒲田店</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://daikiwakabayash.github.io/YURUMU/stores/ikebukuro.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://daikiwakabayash.github.io/YURUMU/stores/ikebukuro.html"/>
+    <image:image>
+      <image:loc>https://daikiwakabayash.github.io/YURUMU/images/store-ikebukuro.jpg</image:loc>
+      <image:title>池袋の整体院 YURUMU 池袋店</image:title>
+      <image:caption>池袋駅徒歩圏内、頭痛・自律神経・肩こり専門の整体院</image:caption>
+    </image:image>
+  </url>
+
+</urlset>
