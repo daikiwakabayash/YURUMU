@@ -438,6 +438,29 @@ footer .copy{font-size:10px;letter-spacing:1px}
 @media(max-width:480px){
   .gallery__item{height:180px}
 }
+
+/* Consistent store cards: shared image, information and action rows. */
+#stores .stores__grid{align-items:stretch}
+#stores .sv2{display:flex;flex-direction:column;min-width:0}
+#stores .sv2__hero{display:block;aspect-ratio:16/9;flex-shrink:0}
+#stores .sv2__hero img{display:block;width:100%;height:100%;object-fit:cover}
+#stores .sv2__body{display:grid;grid-template-rows:76px 192px 80px 200px 36px 56px 36px;gap:0;padding:28px;text-align:left}
+#stores .sv2__heading{text-align:center}
+#stores .sv2__name{font-size:30px;line-height:1.2;letter-spacing:4px;margin:0 0 8px}
+#stores .sv2__name-jp{font-size:14px;font-weight:500;letter-spacing:1.2px;color:#d6cfc1;margin:0;line-height:1.5}
+#stores .sv2__info{display:grid;grid-template-rows:64px 36px 36px 36px;gap:0;margin:0;padding:0}
+#stores .sv2__row{display:grid;grid-template-columns:64px minmax(0,1fr);gap:12px;font-size:13px;line-height:1.65;align-items:start}
+#stores .sv2__row dt{color:#b6a583;font-size:11px;padding-top:2px}
+#stores .sv2__row dd{margin:0;color:#e0dacf;overflow-wrap:anywhere}
+#stores .sv2__intro{font-size:13px;line-height:1.9;margin:0;color:#e0dacf}
+#stores .sv2__map{height:200px;margin:0;border-radius:8px}
+#stores .sv2__map-link{font-size:12px;align-self:center;text-align:right;color:#d4be8a}
+#stores .sv2__ctas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+#stores .sc-btn{min-height:52px;font-size:12px;letter-spacing:.5px;padding:12px 8px}
+#stores .sc-btn:only-child{grid-column:1/-1}
+#stores .sv2__detail{align-self:end;text-align:center;font-size:12px;color:#d6cfc1}
+@media(max-width:767px){#stores .stores__grid{grid-template-columns:1fr;gap:28px}#stores .sv2__body{padding:24px 20px;grid-template-rows:76px 204px 88px 180px 40px 56px 40px}#stores .sv2__info{grid-template-rows:76px 36px 36px 36px}#stores .sv2__map{height:180px}#stores .sv2__name{font-size:28px}#stores .sv2__row{grid-template-columns:58px minmax(0,1fr);gap:10px}}
+
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "YURUMU", "url": "https://daikiwakabayash.github.io/YURUMU/", "location": [{"@context": "https://schema.org", "@type": "HealthAndBeautyBusiness", "@id": "https://daikiwakabayash.github.io/YURUMU/stores/ikebukuro.html#business", "name": "YURUMU 池袋店", "url": "https://daikiwakabayash.github.io/YURUMU/stores/ikebukuro.html", "address": {"@type": "PostalAddress", "streetAddress": "西池袋5丁目10-1 村中ビル4階", "addressLocality": "豊島区", "addressRegion": "東京都", "postalCode": "171-0021", "addressCountry": "JP"}, "areaServed": ["池袋", "豊島区"]}, {"@context": "https://schema.org", "@type": "HealthAndBeautyBusiness", "@id": "https://daikiwakabayash.github.io/YURUMU/stores/kamata.html#business", "name": "YURUMU 蒲田店", "url": "https://daikiwakabayash.github.io/YURUMU/stores/kamata.html", "address": {"@type": "PostalAddress", "streetAddress": "蒲田5丁目18-3 NO1太陽ビル5階", "addressLocality": "大田区", "addressRegion": "東京都", "postalCode": "144-0052", "addressCountry": "JP"}, "areaServed": ["蒲田", "大田区"]}, {"@context": "https://schema.org", "@type": "HealthAndBeautyBusiness", "@id": "https://daikiwakabayash.github.io/YURUMU/stores/oji.html#business", "name": "YURUMU（ゆるむ）整体 王子院", "url": "https://daikiwakabayash.github.io/YURUMU/stores/oji.html", "address": {"@type": "PostalAddress", "streetAddress": "王子本町1丁目13−10", "addressLocality": "北区", "addressRegion": "東京都", "postalCode": "114-0022", "addressCountry": "JP"}, "areaServed": ["王子", "北区"], "telephone": "+81-80-4266-7013", "image": ["https://daikiwakabayash.github.io/YURUMU/images/oji-sign.jpg", "https://daikiwakabayash.github.io/YURUMU/images/oji-entrance.jpg"], "hasMap": "https://www.google.com/maps/place/YURUMU（ゆるむ）整体+王子院/data=!4m2!3m1!1s0x6018937d1cbc0641:0xaa112dc981ceddfd", "geo": {"@type": "GeoCoordinates", "latitude": 35.7535554, "longitude": 139.7330772}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "10:00", "closes": "20:00"}]}]}</script>
 <style>@media(max-width:480px){.store-bar__left{gap:8px}.store-tab{padding:6px;letter-spacing:0}.store-bar__cta{padding:6px 8px;letter-spacing:0}} [id]{scroll-margin-top:70px}</style></head>
@@ -887,66 +910,36 @@ footer .copy{font-size:10px;letter-spacing:1px}
       🎁 <strong style="color:#fff">初回限定 ¥3,500</strong>（通常¥6,600 / 約50%OFF）— Web予約限定
     </div>
     <div class="stores__grid">
-<article class="sv2" id="store-oji"><a href="stores/oji.html" class="sv2__hero" style="display:block;aspect-ratio:1421/1107"><img src="images/oji-sign.jpg" width="1421" height="1107" loading="lazy" alt="YURUMU王子院の看板・外観"></a><div class="sv2__body"><div class="sv2__name">OJI</div><h3 class="sv2__name-jp">王子の整体 YURUMU 王子院</h3><div class="sv2__info"><div class="sv2__row"><div class="sv2__row-text">〒114-0022 東京都北区王子本町1丁目13−10</div></div><div class="sv2__row"><div class="sv2__row-text">王子駅から徒歩7分</div></div><div class="sv2__row"><div class="sv2__row-text">10:00〜20:00（月〜日）／電話 080-4266-7013</div></div></div><p style="font-size:14px;line-height:1.9;margin-bottom:20px">王子・王子本町で整体をお探しの方へ。頭痛・肩こりや、自律神経に関する不調のご相談を承ります。</p><div class="sv2__map"><iframe title="YURUMU王子院のアクセスマップ" src="https://maps.google.com/maps?q=35.7535554,139.7330772&amp;z=17&amp;output=embed" width="600" height="200" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div><p style="font-size:13px;margin:0 0 20px"><a href="https://www.google.com/maps/place/YURUMU（ゆるむ）整体+王子院/data=!4m2!3m1!1s0x6018937d1cbc0641:0xaa112dc981ceddfd" target="_blank" rel="noopener">Googleマップで王子院の場所を確認する ↗</a></p><div class="sv2__ctas"><a class="sc-btn phone" href="tel:08042667013">電話で相談</a><a class="sc-btn reserve" href="https://form.salonone.net/brands/4026/shops/36562/form/D5Cic4mGa8e5.html" target="_blank" rel="noopener">初回3,500円でWeb予約</a></div></div>
-<p style="font-size:13px;margin:0 28px 24px"><a href="stores/oji.html">王子院の整体・アクセスを見る →</a></p></article>
-      <!-- ▼ 店舗画像: images/store-ikebukuro.jpg をアップロードするだけで自動表示 -->
-      <!-- 池袋 -->
-      <div class="sv2 reveal" id="store-ikebukuro">
-        <div class="sv2__hero">
-          <div class="sv2__hero-ph" data-image="store-ikebukuro.jpg" data-alt="YURUMU 池袋店"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label">池袋店の外観・内装写真</span><span class="ph-file">images/store-ikebukuro.jpg</span><span class="ph-size">推奨: 600×300px</span></div>
-          <div class="sv2__badge open">OPEN</div>
-        </div>
-        <div class="sv2__body">
-          <div class="sv2__name">IKEBUKURO</div>
-          <h3 class="sv2__name-jp"><a href="stores/ikebukuro.html">YURUMU 池袋店・店舗詳細 →</a></h3>
-          <div class="sv2__info">
-            <div class="sv2__row"><div class="sv2__row-icon">📍</div><div class="sv2__row-text">〒171-0021 東京都豊島区西池袋5丁目10-1 村中ビル4階</div></div>
-            <div class="sv2__row"><div class="sv2__row-icon">🕐</div><div class="sv2__row-text">10:00〜20:00（最終受付 19:00）</div></div>
-            <div class="sv2__row"><div class="sv2__row-icon">📅</div><div class="sv2__row-text">不定休（土日営業）</div></div>
-            <div class="sv2__row"><div class="sv2__row-icon">🚶</div><div class="sv2__row-text">池袋駅より徒歩圏内</div></div>
-          </div>
-          <p style="font-size:14px;line-height:1.9;margin-bottom:20px">池袋・西池袋で整体をお探しの方へ。頭痛・肩こりや、自律神経に関する不調のご相談を承ります。</p>
-          <div class="sv2__map">
-            <iframe title="YURUMU池袋店のアクセスマップ" src="https://maps.google.com/maps?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E8%B1%8A%E5%B3%B6%E5%8C%BA%E8%A5%BF%E6%B1%A0%E8%A2%8B5-10-1%20%E6%9D%91%E4%B8%AD%E3%83%93%E3%83%AB&t=&z=17&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-          <!-- ▼ 予約リンクの設定: href="..." を実際のURLに書き換えてください -->
-          <!-- 電話: tel:実際の電話番号 / LINE: https://lin.ee/xxxxx / 予約: https://予約サイトURL -->
-          <div class="sv2__ctas">
-            
-            <a href="https://lin.ee/sdDNpl5" target="_blank" rel="noopener" class="sc-btn line"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596a.626.626 0 0 1-.199.031c-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595a.62.62 0 0 1 .194-.033c.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>LINE予約</a>
-            <a href="https://yoberu-eight.vercel.app/book/yurumu-sinnkiyou10" target="_blank" rel="noopener" class="sc-btn reserve"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>予約はこちら</a>
-          </div>
-        </div>
-      </div>
-      <!-- ▼ 店舗画像: images/store-kamata.jpg をアップロードするだけで自動表示 -->
-      <!-- 蒲田 -->
-      <div class="sv2 reveal" id="store-kamata">
-        <div class="sv2__hero">
-          <div class="sv2__hero-ph" data-image="store-kamata.jpg" data-alt="YURUMU 蒲田店"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label">蒲田店の外観・内装写真</span><span class="ph-file">images/store-kamata.jpg</span><span class="ph-size">推奨: 600×300px</span></div>
-          <div class="sv2__badge open">OPEN</div>
-        </div>
-        <div class="sv2__body">
-          <div class="sv2__name">KAMATA</div>
-          <h3 class="sv2__name-jp"><a href="stores/kamata.html">YURUMU 蒲田店・店舗詳細 →</a></h3>
-          <div class="sv2__info">
-            <div class="sv2__row"><div class="sv2__row-icon">📍</div><div class="sv2__row-text">〒144-0052 東京都大田区蒲田5丁目18-3 NO1太陽ビル5階</div></div>
-            <div class="sv2__row"><div class="sv2__row-icon">🕐</div><div class="sv2__row-text">10:00〜20:00（予定）</div></div>
-            <div class="sv2__row"><div class="sv2__row-icon">📅</div><div class="sv2__row-text">不定休（土日営業予定）</div></div>
-            <div class="sv2__row"><div class="sv2__row-icon">🚶</div><div class="sv2__row-text">蒲田駅より徒歩圏内</div></div>
-          </div>
-          <p style="font-size:14px;line-height:1.9;margin-bottom:20px">蒲田・蒲田駅周辺で整体をお探しの方へ。頭痛・肩こりや、自律神経に関する不調のご相談を承ります。</p>
-          <div class="sv2__map">
-            <iframe title="YURUMU蒲田店のアクセスマップ" src="https://maps.google.com/maps?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%A4%A7%E7%94%B0%E5%8C%BA%E8%92%B2%E7%94%B05-18-3%20NO1%E5%A4%AA%E9%99%BD%E3%83%93%E3%83%AB&t=&z=17&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-          <!-- ▼ 予約リンクの設定: href="..." を実際のURLに書き換えてください -->
-          <!-- 電話: tel:実際の電話番号 / LINE: https://lin.ee/xxxxx / 予約: https://予約サイトURL -->
-          <div class="sv2__ctas">
-            
-            
-            <a href="stores/kamata.html" class="sc-btn reserve">蒲田店のご案内</a>
-          </div>
-        </div>
-      </div>
+<article class="sv2" id="store-oji">
+<a class="sv2__hero" href="stores/oji.html"><img src="images/oji-collage.png" width="1672" height="941" loading="lazy" alt="王子院の看板と蒲田店の施術ベッドを組み合わせた写真"></a>
+<div class="sv2__body"><div class="sv2__heading"><div class="sv2__name">OJI</div><h3 class="sv2__name-jp">YURUMU 王子院</h3></div>
+<dl class="sv2__info"><div class="sv2__row"><dt>住所</dt><dd>〒114-0022 東京都北区王子本町1丁目13−10</dd></div><div class="sv2__row"><dt>アクセス</dt><dd>王子駅から徒歩7分</dd></div><div class="sv2__row"><dt>営業時間</dt><dd>10:00〜20:00（月〜日）</dd></div><div class="sv2__row"><dt>電話</dt><dd>080-4266-7013</dd></div></dl>
+<p class="sv2__intro">王子・王子本町で整体をお探しの方へ。頭痛・肩こりや、自律神経に関する不調のご相談を承ります。</p>
+<div class="sv2__map"><iframe title="YURUMU王子院のアクセスマップ" src="https://maps.google.com/maps?q=35.7535554%2C139.7330772&amp;z=17&amp;output=embed" width="600" height="200" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+<a class="sv2__map-link" href="https://www.google.com/maps/place/YURUMU（ゆるむ）整体+王子院/data=!4m2!3m1!1s0x6018937d1cbc0641:0xaa112dc981ceddfd" target="_blank" rel="noopener">Googleマップで場所を確認 ↗</a>
+<div class="sv2__ctas"><a class="sc-btn phone" href="tel:08042667013">電話で相談</a><a class="sc-btn reserve" href="https://form.salonone.net/brands/4026/shops/36562/form/D5Cic4mGa8e5.html" target="_blank" rel="noopener">初回3,500円でWeb予約</a></div>
+<a class="sv2__detail" href="stores/oji.html">王子院の整体・アクセスを見る →</a>
+</div></article>
+<article class="sv2" id="store-ikebukuro">
+<a class="sv2__hero" href="stores/ikebukuro.html"><img src="images/store-ikebukuro.jpg" width="1672" height="941" loading="lazy" alt="YURUMU池袋店の待合スペース・施術ベッド・看板"></a>
+<div class="sv2__body"><div class="sv2__heading"><div class="sv2__name">IKEBUKURO</div><h3 class="sv2__name-jp">YURUMU 池袋店</h3></div>
+<dl class="sv2__info"><div class="sv2__row"><dt>住所</dt><dd>〒171-0021 東京都豊島区西池袋5丁目10-1 村中ビル4階</dd></div><div class="sv2__row"><dt>アクセス</dt><dd>池袋駅より徒歩圏内</dd></div><div class="sv2__row"><dt>営業時間</dt><dd>10:00〜20:00（最終受付19:00）</dd></div><div class="sv2__row"><dt>定休日</dt><dd>不定休（土日営業）</dd></div></dl>
+<p class="sv2__intro">池袋・西池袋で整体をお探しの方へ。頭痛・肩こりや、自律神経に関する不調のご相談を承ります。</p>
+<div class="sv2__map"><iframe title="YURUMU池袋店のアクセスマップ" src="https://maps.google.com/maps?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E8%B1%8A%E5%B3%B6%E5%8C%BA%E8%A5%BF%E6%B1%A0%E8%A2%8B5-10-1%20%E6%9D%91%E4%B8%AD%E3%83%93%E3%83%AB&amp;z=17&amp;output=embed" width="600" height="200" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+<a class="sv2__map-link" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E8%B1%8A%E5%B3%B6%E5%8C%BA%E8%A5%BF%E6%B1%A0%E8%A2%8B5-10-1%20%E6%9D%91%E4%B8%AD%E3%83%93%E3%83%AB" target="_blank" rel="noopener">Googleマップで場所を確認 ↗</a>
+<div class="sv2__ctas"><a class="sc-btn line" href="https://lin.ee/sdDNpl5" target="_blank" rel="noopener">LINE予約</a><a class="sc-btn reserve" href="https://yoberu-eight.vercel.app/book/yurumu-sinnkiyou10" target="_blank" rel="noopener">Web予約はこちら</a></div>
+<a class="sv2__detail" href="stores/ikebukuro.html">池袋店の整体・アクセスを見る →</a>
+</div></article>
+<article class="sv2" id="store-kamata">
+<a class="sv2__hero" href="stores/kamata.html"><img src="images/store-kamata.jpg" width="1672" height="941" loading="lazy" alt="YURUMU蒲田店の待合スペースと施術ベッド"></a>
+<div class="sv2__body"><div class="sv2__heading"><div class="sv2__name">KAMATA</div><h3 class="sv2__name-jp">YURUMU 蒲田店</h3></div>
+<dl class="sv2__info"><div class="sv2__row"><dt>住所</dt><dd>〒144-0052 東京都大田区蒲田5丁目18-3 NO1太陽ビル5階</dd></div><div class="sv2__row"><dt>アクセス</dt><dd>蒲田駅より徒歩圏内</dd></div><div class="sv2__row"><dt>営業時間</dt><dd>10:00〜20:00（予定）</dd></div><div class="sv2__row"><dt>定休日</dt><dd>不定休（土日営業予定）</dd></div></dl>
+<p class="sv2__intro">蒲田・蒲田駅周辺で整体をお探しの方へ。頭痛・肩こりや、自律神経に関する不調のご相談を承ります。</p>
+<div class="sv2__map"><iframe title="YURUMU蒲田店のアクセスマップ" src="https://maps.google.com/maps?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%A4%A7%E7%94%B0%E5%8C%BA%E8%92%B2%E7%94%B05-18-3%20NO1%E5%A4%AA%E9%99%BD%E3%83%93%E3%83%AB&amp;z=17&amp;output=embed" width="600" height="200" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+<a class="sv2__map-link" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%A4%A7%E7%94%B0%E5%8C%BA%E8%92%B2%E7%94%B05-18-3%20NO1%E5%A4%AA%E9%99%BD%E3%83%93%E3%83%AB" target="_blank" rel="noopener">Googleマップで場所を確認 ↗</a>
+<div class="sv2__ctas"><a class="sc-btn reserve" href="stores/kamata.html">蒲田店のご案内</a></div>
+<a class="sv2__detail" href="stores/kamata.html">蒲田店の整体・アクセスを見る →</a>
+</div></article>
     </div>
   </div>
 </section>
